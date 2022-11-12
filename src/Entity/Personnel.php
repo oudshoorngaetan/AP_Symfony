@@ -19,6 +19,12 @@ class Personnel
     #[ORM\Column(length: 30)]
     private ?string $prenom = null;
 
+    #[ORM\ManyToOne]
+    private ?Role $role = null;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?User $email = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +50,30 @@ class Personnel
     public function setPrenom(string $prenom): self
     {
         $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getRole(): ?Role
+    {
+        return $this->role;
+    }
+
+    public function setRole(?Role $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    public function getEmail(): ?User
+    {
+        return $this->email;
+    }
+
+    public function setEmail(?User $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

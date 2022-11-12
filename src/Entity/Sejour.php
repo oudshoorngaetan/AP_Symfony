@@ -23,6 +23,13 @@ class Sejour
     #[ORM\Column(length: 60)]
     private ?string $commentaire = null;
 
+    #[ORM\ManyToOne(inversedBy: 'sejours')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Patient $patient = null;
+
+    #[ORM\ManyToOne(inversedBy: 'sejours')]
+    private ?Lit $lit = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +67,30 @@ class Sejour
     public function setCommentaire(string $commentaire): self
     {
         $this->commentaire = $commentaire;
+
+        return $this;
+    }
+
+    public function getPatient(): ?Patient
+    {
+        return $this->patient;
+    }
+
+    public function setPatient(?Patient $patient): self
+    {
+        $this->patient = $patient;
+
+        return $this;
+    }
+
+    public function getLit(): ?Lit
+    {
+        return $this->lit;
+    }
+
+    public function setLit(?Lit $lit): self
+    {
+        $this->lit = $lit;
 
         return $this;
     }
