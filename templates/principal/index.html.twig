@@ -14,10 +14,11 @@
 Connecté en tant que {{ app.user.email }}
 <a href="{{ path('app_logout') }}"> logout </a>
 {% else %}
-<a href="{{ path('login') }}"> Login </a>
+<a href="{{ path('app_login') }}"> Login </a>
 {% endif %}
 
 {% endif %}
+</header>
 
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>

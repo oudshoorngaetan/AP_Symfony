@@ -577,7 +577,9 @@ class ComposerStaticInitf866965c47294d11c79c380f5b1d7a26
     );
 
     public static $classMap = array (
+        'App\\Controller\\LoginController' => __DIR__ . '/../..' . '/src/Controller/LoginController.php',
         'App\\Controller\\PrincipalController' => __DIR__ . '/../..' . '/src/Controller/PrincipalController.php',
+        'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Entity\\Chambre' => __DIR__ . '/../..' . '/src/Entity/Chambre.php',
         'App\\Entity\\Lit' => __DIR__ . '/../..' . '/src/Entity/Lit.php',
         'App\\Entity\\Patient' => __DIR__ . '/../..' . '/src/Entity/Patient.php',
@@ -586,6 +588,7 @@ class ComposerStaticInitf866965c47294d11c79c380f5b1d7a26
         'App\\Entity\\Sejour' => __DIR__ . '/../..' . '/src/Entity/Sejour.php',
         'App\\Entity\\Service' => __DIR__ . '/../..' . '/src/Entity/Service.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+        'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\ChambreRepository' => __DIR__ . '/../..' . '/src/Repository/ChambreRepository.php',
         'App\\Repository\\LitRepository' => __DIR__ . '/../..' . '/src/Repository/LitRepository.php',

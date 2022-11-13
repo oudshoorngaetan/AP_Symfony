@@ -22,10 +22,10 @@ security:
                 # "app_login" is the name of the route created previously
              login_path: app_login
              check_path: app_login
-             default_target_path: /principal
+             default_target_path: app_principal
         logout:
              path: app_logout
-             target: /principal
+             target: app_principal
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
