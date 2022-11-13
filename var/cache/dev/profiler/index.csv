@@ -1,0 +1,6 @@
+3bf639,::1,GET,http://localhost:8000/,1668303881,,404
+b55cfc,::1,GET,http://localhost:8000/favicon.ico,1668303883,fc5b35,404
+fc5b35,::1,GET,http://localhost:8000/favicon.ico,1668303883,,404
+e98325,::1,GET,http://localhost:8000/register,1668303890,,200
+ff09c2,::1,GET,http://localhost:8000/register,1668303909,7643bb,500
+7643bb,::1,POST,http://localhost:8000/register,1668303909,,500

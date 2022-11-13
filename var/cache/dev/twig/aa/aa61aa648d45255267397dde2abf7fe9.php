@@ -825,6 +825,6 @@ class __TwigTemplate_d7ee3f9ebad5f7ab9916cae043b40fd7 extends Template
         </table>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/config.html.twig", "C:\\Users\\Gatch\\Documents\\Projet\\AP_Symfony_Sejour_lang-miroux-oudshoorn\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\config.html.twig");
+", "@WebProfiler/Collector/config.html.twig", "C:\\Users\\julie\\Desktop\\AP_Symfony_Sejour_lang-miroux-oudshoorn\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\config.html.twig");
     }
 }

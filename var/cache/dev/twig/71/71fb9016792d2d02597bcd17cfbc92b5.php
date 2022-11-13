@@ -227,6 +227,6 @@ class __TwigTemplate_b3235e81b63d220fcb643192f17f3269 extends Template
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/exception.html.twig", "C:\\Users\\Gatch\\Documents\\Projet\\AP_Symfony_Sejour_lang-miroux-oudshoorn\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.html.twig");
+", "@WebProfiler/Collector/exception.html.twig", "C:\\Users\\julie\\Desktop\\AP_Symfony_Sejour_lang-miroux-oudshoorn\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.html.twig");
     }
 }
