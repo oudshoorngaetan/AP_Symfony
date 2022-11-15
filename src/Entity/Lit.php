@@ -21,8 +21,8 @@ class Lit
     #[ORM\OneToMany(mappedBy: 'lit', targetEntity: Sejour::class)]
     private Collection $sejours;
 
-    #[ORM\ManyToMany(targetEntity: Chambre::class, mappedBy: 'lit')]
-    private Collection $chambre;
+    #[ORM\ManyToOne(inversedBy: 'lits')]
+    private ?Chambre $chambre = null;
 
     public function __construct()
     {
@@ -77,29 +77,14 @@ class Lit
         return $this;
     }
 
-    /**
-     * @return Collection<int, Chambre>
-     */
-    public function getChambre(): Collection
+    public function getChambre(): ?Chambre
     {
         return $this->chambre;
     }
 
-    public function addChambre(Chambre $chambre): self
+    public function setChambre(?Chambre $chambre): self
     {
-        if (!$this->chambre->contains($chambre)) {
-            $this->chambre->add($chambre);
-            $chambre->addLit($this);
-        }
-
-        return $this;
-    }
-
-    public function removeChambre(Chambre $chambre): self
-    {
-        if ($this->chambre->removeElement($chambre)) {
-            $chambre->removeLit($this);
-        }
+        $this->chambre = $chambre;
 
         return $this;
     }

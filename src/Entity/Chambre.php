@@ -21,12 +21,13 @@ class Chambre
     #[ORM\ManyToOne(inversedBy: 'chambres')]
     private ?Service $service = null;
 
-    #[ORM\ManyToMany(targetEntity: Lit::class, inversedBy: 'chambre')]
-    private Collection $lit;
+    #[ORM\OneToMany(mappedBy: 'chambre', targetEntity: Lit::class)]
+    private Collection $lits;
 
     public function __construct()
     {
         $this->lit = new ArrayCollection();
+        $this->lits = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -61,15 +62,16 @@ class Chambre
     /**
      * @return Collection<int, Lit>
      */
-    public function getLit(): Collection
+    public function getLits(): Collection
     {
-        return $this->lit;
+        return $this->lits;
     }
 
     public function addLit(Lit $lit): self
     {
-        if (!$this->lit->contains($lit)) {
-            $this->lit->add($lit);
+        if (!$this->lits->contains($lit)) {
+            $this->lits->add($lit);
+            $lit->setChambre($this);
         }
 
         return $this;
@@ -77,7 +79,12 @@ class Chambre
 
     public function removeLit(Lit $lit): self
     {
-        $this->lit->removeElement($lit);
+        if ($this->lits->removeElement($lit)) {
+            // set the owning side to null (unless already changed)
+            if ($lit->getChambre() === $this) {
+                $lit->setChambre(null);
+            }
+        }
 
         return $this;
     }
