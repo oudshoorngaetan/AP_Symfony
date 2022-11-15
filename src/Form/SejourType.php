@@ -22,8 +22,8 @@ class SejourType extends AbstractType
             ->add('dateArr', DateType::class, array('label'=>'Nom de l\'adhérent : '))
             ->add('dateSort', DateType::class, array('label'=>'Nom de l\'adhérent : '))
             ->add('commentaire', TextType::class, array('label'=>'Nom de l\'adhérent : '))
-            ->add('patient',  EntityType::class, array('class'=>Patient::class,'choice_label'=>'numero patient'))
-            ->add('lit', EntityType::class, array('class'=>Lit::class,'choice_label'=>'numero lit'))
+            ->add('patient',  EntityType::class, array('class'=>Patient::class,'choice_label'=>'id'))
+            ->add('lit', EntityType::class, array('class'=>Lit::class,'choice_label'=>'id'))
             ->add('save', SubmitType::class, array('label' => 'Enregistrer le sejour'))
             
         ;

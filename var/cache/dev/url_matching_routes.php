@@ -21,6 +21,8 @@ return [
         '/ajout_patient' => [[['_route' => 'ajout_patient', '_controller' => 'App\\Controller\\PatientController::ajoutPatient'], null, null, null, false, false, null]],
         '/principal' => [[['_route' => 'app_principal', '_controller' => 'App\\Controller\\PrincipalController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
+        '/sejour' => [[['_route' => 'app_sejour', '_controller' => 'App\\Controller\\SejourController::index'], null, null, null, false, false, null]],
+        '/createSejour' => [[['_route' => 'app_ajoutSejour', '_controller' => 'App\\Controller\\SejourController::createClub'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -40,6 +42,7 @@ return [
                     .')'
                 .')'
                 .'|/patient/([^/]++)(*:186)'
+                .'|/modifSejour/([^/]++)(*:215)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -50,8 +53,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        186 => [
-            [['_route' => 'patient', '_controller' => 'App\\Controller\\PatientController::getUnPatient'], ['id'], null, null, false, true, null],
+        186 => [[['_route' => 'patient', '_controller' => 'App\\Controller\\PatientController::getUnPatient'], ['id'], null, null, false, true, null]],
+        215 => [
+            [['_route' => 'app_modifSejourId', '_controller' => 'App\\Controller\\SejourController::modifd'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
