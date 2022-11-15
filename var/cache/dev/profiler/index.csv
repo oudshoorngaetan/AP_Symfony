@@ -92,3 +92,4 @@ a36855,127.0.0.1,GET,http://localhost:8000/patient/1,1668523688,,200
 948075,127.0.0.1,GET,http://127.0.0.1:8000/sejour/affichage,1668526391,,500
 2c910d,127.0.0.1,GET,http://127.0.0.1:8000/sejour/affichage,1668526393,ec0b3f,500
 ec0b3f,127.0.0.1,GET,http://127.0.0.1:8000/sejour/affichage,1668526393,,500
+7d9da9,127.0.0.1,GET,http://127.0.0.1:8000/sejour/affichage,1668526571,,200
