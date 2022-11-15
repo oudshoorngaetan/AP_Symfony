@@ -1543,6 +1543,6 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 423) == twig
         </div>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "/home/sio2022/Documents/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
+", "@Security/Collector/security.html.twig", "/home/sio2022/Documents/Symfony/Projet/Aled/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
     }
 }
