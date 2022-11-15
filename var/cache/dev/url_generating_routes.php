@@ -18,6 +18,9 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\LoginController::index'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
+    'patients' => [[], ['_controller' => 'App\\Controller\\PatientController::getPatients'], [], [['text', '/patients']], [], [], []],
+    'ajout_patient' => [[], ['_controller' => 'App\\Controller\\PatientController::ajoutPatient'], [], [['text', '/ajout_patient']], [], [], []],
+    'patient' => [['id'], ['_controller' => 'App\\Controller\\PatientController::getUnPatient'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/patient']], [], [], []],
     'app_principal' => [[], ['_controller' => 'App\\Controller\\PrincipalController::index'], [], [['text', '/principal']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
 ];
