@@ -99,6 +99,6 @@ class __TwigTemplate_ee2ff6a6f95a987008e49b98b63e1393 extends Template
 .container.body_default {
     border-top: 8px solid #aaaaaa;
 }
-", "@email/zurb_2/notification/local.css", "/home/sio2022/Documents/Symfony/Projet/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/local.css");
+", "@email/zurb_2/notification/local.css", "/home/sio2022/Documents/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/local.css");
     }
 }

@@ -71,6 +71,6 @@ class __TwigTemplate_04ecc2e3d51cf9ed75a96f5d3927ae54 extends Template
     public function getSourceContext()
     {
         return new Source("{% extends \"@email/zurb_2/notification/body.txt.twig\" %}
-", "@email/default/notification/body.txt.twig", "/home/sio2022/Documents/Symfony/Projet/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.txt.twig");
+", "@email/default/notification/body.txt.twig", "/home/sio2022/Documents/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.txt.twig");
     }
 }
