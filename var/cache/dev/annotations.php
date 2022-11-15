@@ -54,10 +54,20 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%23addLink' => 1,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 0,
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
+'App%5CController%5CLoginController' => 0,
+'[C]App%5CController%5CLoginController' => 1,
+'App%5CController%5CLoginController%23index' => 0,
+'[C]App%5CController%5CLoginController%23index' => 1,
+'App%5CController%5CLoginController%23logout' => 0,
+'[C]App%5CController%5CLoginController%23logout' => 1,
 'App%5CController%5CPrincipalController' => 0,
 '[C]App%5CController%5CPrincipalController' => 1,
 'App%5CController%5CPrincipalController%23index' => 0,
 '[C]App%5CController%5CPrincipalController%23index' => 1,
+'App%5CController%5CRegistrationController' => 0,
+'[C]App%5CController%5CRegistrationController' => 1,
+'App%5CController%5CRegistrationController%23register' => 0,
+'[C]App%5CController%5CRegistrationController%23register' => 1,
 'App%5CEntity%5CChambre' => 0,
 '[C]App%5CEntity%5CChambre' => 1,
 'App%5CEntity%5CChambre%23__construct' => 0,
@@ -852,6 +862,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1668303503,
+1 => 1668515999,
 
 ]];
