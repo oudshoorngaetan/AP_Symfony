@@ -102,6 +102,6 @@ class __TwigTemplate_010edcb399580d8ea50d0f71bf061f61 extends Template
     {% if link|default(false) %}</a>{% endif %}
         <div class=\"sf-toolbar-info\">{{ text|default('') }}</div>
 </div>
-", "@WebProfiler/Profiler/toolbar_item.html.twig", "/home/sio2022/Documents/Symfony/Projet/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_item.html.twig");
+", "@WebProfiler/Profiler/toolbar_item.html.twig", "/home/sio2022/Bureau/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_item.html.twig");
     }
 }

@@ -12,7 +12,7 @@ class PrincipalController extends AbstractController
     public function index(): Response
     {
         
-        $user = $this→getUser();
+        $user = $this->getUser();
         return $this->render('principal/index.html.twig', [
             'controller_name' => 'PrincipalController',
             'user'=>$user

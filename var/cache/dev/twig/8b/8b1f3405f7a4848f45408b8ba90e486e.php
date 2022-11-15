@@ -30,6 +30,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'javascripts' => [$this, 'block_javascripts'],
+            'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -65,10 +66,16 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         // line 15
         echo "    </head>
     <body>
-        ";
-        // line 17
-        $this->displayBlock('body', $context, $blocks);
+    <header>
+     ";
         // line 18
+        $this->displayBlock('header', $context, $blocks);
+        // line 21
+        echo "    </header>
+        ";
+        // line 22
+        $this->displayBlock('body', $context, $blocks);
+        // line 23
         echo "    </body>
 </html>
 ";
@@ -145,7 +152,30 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 
     }
 
-    // line 17
+    // line 18
+    public function block_header($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        // line 19
+        echo "      ";
+        $this->loadTemplate("base/nav.html.twig", "base.html.twig", 19)->display($context);
+        // line 20
+        echo "     ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 22
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -170,7 +200,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 
     public function getDebugInfo()
     {
-        return array (  149 => 17,  136 => 13,  126 => 12,  113 => 9,  103 => 8,  84 => 5,  72 => 18,  70 => 17,  66 => 15,  64 => 12,  61 => 11,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  179 => 22,  169 => 20,  166 => 19,  156 => 18,  143 => 13,  133 => 12,  120 => 9,  110 => 8,  91 => 5,  79 => 23,  77 => 22,  74 => 21,  72 => 18,  67 => 15,  65 => 12,  62 => 11,  59 => 8,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -191,9 +221,14 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         {% endblock %}
     </head>
     <body>
+    <header>
+     {% block header %}
+      {% include 'base/nav.html.twig' %}
+     {% endblock %}
+    </header>
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/sio2022/Documents/Symfony/Projet/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base.html.twig");
+", "base.html.twig", "/home/sio2022/Bureau/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base.html.twig");
     }
 }

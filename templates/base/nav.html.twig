@@ -1,0 +1,10 @@
+<nav>
+
+<a class="button" href="{{path('app_register')}}">Inscription</a>
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+Connecté en tant que {{ app.user.email }}
+<a href="{{ path('app_logout') }}"> logout </a>
+{% else %}
+<a href="{{ path('app_login') }}"> Login </a>
+{% endif %}
+</nav>
