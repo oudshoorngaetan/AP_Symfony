@@ -11,6 +11,21 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+--
+-- Déchargement des données de la table `service`
+--
+
+INSERT INTO `service` (`id`, `libelle`) VALUES
+(1, 'Cadiologie'),
+(2, 'Radiologie'),
+(3, 'Chirurgie'),
+(4, 'Chirurgie esthétique'),
+(5, 'Oncologie'),
+(6, 'Soins intensifs'),
+(7, 'Urologie'),
+(8, 'Anesthésiologie');
+
+
 INSERT INTO `chambre` (`id`, `numero`, `service_id`) VALUES
 (1, 101, 1),
 (2, 102, 1),
@@ -96,19 +111,6 @@ INSERT INTO `sejour` (`id`, `date_arr`, `date_sort`, `commentaire`, `patient_id`
 (3, '2022-11-22', '2022-11-27', 'Test3', 3, 18),
 (4, '2022-11-22', '2022-11-30', 'Test4', 4, 4);
 
---
--- Déchargement des données de la table `service`
---
-
-INSERT INTO `service` (`id`, `libelle`) VALUES
-(1, 'Cadiologie'),
-(2, 'Radiologie'),
-(3, 'Chirurgie'),
-(4, 'Chirurgie esthétique'),
-(5, 'Oncologie'),
-(6, 'Soins intensifs'),
-(7, 'Urologie'),
-(8, 'Anesthésiologie');
 
 --
 -- Déchargement des données de la table `user`
