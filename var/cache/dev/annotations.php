@@ -58,6 +58,8 @@ return [[
 '[C]App%5CController%5CAffichageSejourController' => 1,
 'App%5CController%5CAffichageSejourController%23index' => 0,
 '[C]App%5CController%5CAffichageSejourController%23index' => 1,
+'App%5CController%5CAffichageSejourController%23sejoursDuJour' => 0,
+'[C]App%5CController%5CAffichageSejourController%23sejoursDuJour' => 1,
 'App%5CController%5CLoginController' => 0,
 '[C]App%5CController%5CLoginController' => 1,
 'App%5CController%5CLoginController%23index' => 0,
@@ -122,10 +124,6 @@ return [[
 '[C]App%5CEntity%5CLit%23__construct' => 1,
 'App%5CEntity%5CLit%23getId' => 0,
 '[C]App%5CEntity%5CLit%23getId' => 1,
-'App%5CEntity%5CLit%23getNumero' => 0,
-'[C]App%5CEntity%5CLit%23getNumero' => 1,
-'App%5CEntity%5CLit%23setNumero' => 0,
-'[C]App%5CEntity%5CLit%23setNumero' => 1,
 'App%5CEntity%5CLit%23getSejours' => 0,
 '[C]App%5CEntity%5CLit%23getSejours' => 1,
 'App%5CEntity%5CLit%23addSejour' => 0,
@@ -138,8 +136,6 @@ return [[
 '[C]App%5CEntity%5CLit%23setChambre' => 1,
 'App%5CEntity%5CLit%24id' => 0,
 '[C]App%5CEntity%5CLit%24id' => 1,
-'App%5CEntity%5CLit%24numero' => 0,
-'[C]App%5CEntity%5CLit%24numero' => 1,
 'App%5CEntity%5CLit%24sejours' => 0,
 '[C]App%5CEntity%5CLit%24sejours' => 1,
 'App%5CEntity%5CLit%24chambre' => 0,
@@ -218,8 +214,6 @@ return [[
 '[C]App%5CEntity%5CPersonnel%24nom' => 1,
 'App%5CEntity%5CPersonnel%24prenom' => 0,
 '[C]App%5CEntity%5CPersonnel%24prenom' => 1,
-'App%5CEntity%5CPersonnel%24role' => 0,
-'[C]App%5CEntity%5CPersonnel%24role' => 1,
 'App%5CEntity%5CPersonnel%24email' => 0,
 '[C]App%5CEntity%5CPersonnel%24email' => 1,
 'App%5CEntity%5CSejour' => 0,
@@ -864,6 +858,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1669122170,
+1 => 1669132677,
 
 ]];

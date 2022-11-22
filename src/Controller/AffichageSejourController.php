@@ -18,7 +18,7 @@ class AffichageSejourController extends AbstractController
         // Récupère tous les séjours
         $lesSejours=$repository->findAll();
         return $this->render('affichage_sejour/index.html.twig', [
-            'controller_name' => 'Affichage des séjours',
+            'controller_name' => 'Séjours',
             'sejours'         => $lesSejours,
         ]);
     }
@@ -29,10 +29,18 @@ class AffichageSejourController extends AbstractController
         // Récupère la classe Sejour
         $repository=$doctrine->getRepository(Sejour::class);
         // Récupère tous les séjours
-        //if(roles)
         $lesSejours=$repository->findAll();
+        /*
+        $desSejours=$repository->findAll();
+        $lesSejours=Array();
+        foreach($desSejours as $unSejour){
+            if(strtotime($unSejour.dateArr) == strtotime('now')){
+                array_push($lesSejours, $unSejour);
+            }
+        }
+        */
         return $this->render('affichage_sejour/index.html.twig', [
-            'controller_name' => 'Affichage des séjours',
+            'controller_name' => 'Séjours du jour',
             'sejours'         => $lesSejours,
         ]);
     }

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AffichageSejourController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>{{ controller_name }}</h1>
+</div>
+<table>
+    <thead>
+        <th>Patient</th>
+        <th>Service</th>
+        <th>Chambre</th>
+        <th>Lit</th>
+        <th>Commentaire</th>
+        <th>Date d'arrivée</th>
+        <th>Date de sortie</th>
+    </thead>
+    <tbody>
+{% for sejour in sejours %}
+    {% if sejour.dateArr = date() %}
+    <tr>
+        <td>{{ sejour.patient.nom }} {{ sejour.patient.prenom }}</td>
+        <td>{{ sejour.lit.chambre.service.libelle }}</td>
+        <td>{{ sejour.lit.chambre.numero }}</td>
+        <td>{{ sejour.lit.id }}</td>
+        <td>{{ sejour.commentaire }}</td>
+        <td>{{ sejour.dateArr | date('d-m-Y')}}</td>
+        <td>{{ sejour.dateSort | date('d-m-Y')}}</td>
+    </tr>
+    {% endif %}
+{% else %}
+    Pas de patients
+{% endfor %}
+    </tbody>
+</table>
+{% endblock %}
