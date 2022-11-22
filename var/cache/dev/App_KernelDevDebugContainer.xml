@@ -5234,6 +5234,13 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.seV17mW"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
@@ -5757,6 +5764,9 @@
     </service>
     <service id=".security.request_matcher.vyx49oy" class="Symfony\Component\HttpFoundation\RequestMatcher">
       <argument>^/patient</argument>
+    </service>
+    <service id=".security.request_matcher.seV17mW" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/sejour/affichage</argument>
     </service>
     <service id="security.command.user_password_hash" class="Symfony\Component\PasswordHasher\Command\UserPasswordHashCommand">
       <tag name="console.command"/>
@@ -6484,10 +6494,11 @@
         <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
       </argument>
     </service>
-    <service id=".service_locator.T1SEF4u" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.QsSTh0h" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AffichageSejourController::index" type="service_closure" id=".service_locator.GQZbvNR"/>
+        <argument key="App\Controller\AffichageSejourController::sejoursDuJour" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\LoginController::index" type="service_closure" id=".service_locator.zFcJjKU"/>
         <argument key="App\Controller\PatientController::ajoutPatient" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\PatientController::getPatients" type="service_closure" id=".service_locator.GQZbvNR"/>
@@ -6502,6 +6513,7 @@
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.bRdave9"/>
         <argument key="App\Controller\AffichageSejourController:index" type="service_closure" id=".service_locator.GQZbvNR"/>
+        <argument key="App\Controller\AffichageSejourController:sejoursDuJour" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\LoginController:index" type="service_closure" id=".service_locator.zFcJjKU"/>
         <argument key="App\Controller\PatientController:ajoutPatient" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\PatientController:getPatients" type="service_closure" id=".service_locator.GQZbvNR"/>
@@ -7335,12 +7347,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.T1SEF4u"/>
+      <argument type="service" id=".service_locator.QsSTh0h"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.T1SEF4u"/>
+      <argument type="service" id=".service_locator.QsSTh0h"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8283,7 +8295,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.T1SEF4u"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.QsSTh0h"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8305,7 +8317,7 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.riGN6sa" alias=".service_locator.YU8H6ve"/>
-    <service id=".service_locator.48EjL0f" alias=".service_locator.T1SEF4u"/>
+    <service id=".service_locator.a4YuvWq" alias=".service_locator.QsSTh0h"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.YmVYGZR" alias=".service_locator.krIQreQ"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>

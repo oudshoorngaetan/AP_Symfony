@@ -41,6 +41,7 @@ security:
         - { path: ^/ajout_patient, roles: ROLE_INFIRMIER }
         - { path: ^/ajout_patient, roles: ROLE_ADMIN }
         - { path: ^/patient, roles: ROLE_INFIRMIER}
+        - { path: ^/sejour/affichage, roles: ROLE_ADMIN }
        
 
 when@test:
