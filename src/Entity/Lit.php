@@ -15,9 +15,6 @@ class Lit
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $numero = null;
-
     #[ORM\OneToMany(mappedBy: 'lit', targetEntity: Sejour::class)]
     private Collection $sejours;
 

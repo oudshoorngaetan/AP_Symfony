@@ -244,3 +244,7 @@ fffa95,127.0.0.1,GET,http://localhost:8000/sejour/affichage,1669127493,,500
 cd08e0,127.0.0.1,GET,http://localhost:8000/sejour/affichage,1669127493,,500
 bf8612,127.0.0.1,GET,http://localhost:8000/sejour/affichage,1669127493,605533,500
 605533,127.0.0.1,GET,http://localhost:8000/sejour/affichage,1669127493,,500
+7b4787,127.0.0.1,GET,http://localhost:8000/sejour/affichage,1669128319,,200
+0a692d,127.0.0.1,GET,http://localhost:8000/logout,1669128326,,302
+e692e6,127.0.0.1,GET,http://localhost:8000/principal,1669128326,,200
+235767,127.0.0.1,GET,http://localhost:8000/sejour/affichage,1669128332,,200
