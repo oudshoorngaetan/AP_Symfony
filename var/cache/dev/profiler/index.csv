@@ -106,3 +106,8 @@ ab4eff,127.0.0.1,GET,http://127.0.0.1:8000/createSejour,1668527632,,500
 ca1b96,127.0.0.1,GET,http://127.0.0.1:8000/createSejour,1668527689,d287a2,500
 d287a2,127.0.0.1,GET,http://127.0.0.1:8000/createSejour,1668527689,,500
 7aa408,127.0.0.1,GET,http://127.0.0.1:8000/createSejour,1668527774,,200
+5cecf4,127.0.0.1,GET,http://localhost:8000/sejour/affichage,1669120107,,200
+c8993b,127.0.0.1,GET,http://localhost:8000/register,1669120344,,200
+643f1c,127.0.0.1,GET,http://localhost:8000/login,1669120346,,200
+8c53a5,127.0.0.1,POST,http://localhost:8000/login,1669120352,,302
+221165,127.0.0.1,GET,http://localhost:8000/principal,1669120352,,200

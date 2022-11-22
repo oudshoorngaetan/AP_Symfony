@@ -101,6 +101,6 @@ Connecté en tant que {{ app.user.email }}
 {% else %}
 <a href=\"{{ path('app_login') }}\"> Login </a>
 {% endif %}
-</nav>", "base/nav.html.twig", "/home/sio2022/Documents/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base/nav.html.twig");
+</nav>", "base/nav.html.twig", "/home/sio2022/Documents/Symfony/Projet/Aled/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base/nav.html.twig");
     }
 }

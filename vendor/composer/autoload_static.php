@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf866965c47294d11c79c380f5b1d7a26
+class ComposerStaticInit7163cbe7d03605ee9bdf6200131b1ec8
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -582,21 +582,21 @@ class ComposerStaticInitf866965c47294d11c79c380f5b1d7a26
         'App\\Controller\\PatientController' => __DIR__ . '/../..' . '/src/Controller/PatientController.php',
         'App\\Controller\\PrincipalController' => __DIR__ . '/../..' . '/src/Controller/PrincipalController.php',
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
+        'App\\Controller\\SejourController' => __DIR__ . '/../..' . '/src/Controller/SejourController.php',
         'App\\Entity\\Chambre' => __DIR__ . '/../..' . '/src/Entity/Chambre.php',
         'App\\Entity\\Lit' => __DIR__ . '/../..' . '/src/Entity/Lit.php',
         'App\\Entity\\Patient' => __DIR__ . '/../..' . '/src/Entity/Patient.php',
         'App\\Entity\\Personnel' => __DIR__ . '/../..' . '/src/Entity/Personnel.php',
-        'App\\Entity\\Role' => __DIR__ . '/../..' . '/src/Entity/Role.php',
         'App\\Entity\\Sejour' => __DIR__ . '/../..' . '/src/Entity/Sejour.php',
         'App\\Entity\\Service' => __DIR__ . '/../..' . '/src/Entity/Service.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
+        'App\\Form\\SejourType' => __DIR__ . '/../..' . '/src/Form/SejourType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\ChambreRepository' => __DIR__ . '/../..' . '/src/Repository/ChambreRepository.php',
         'App\\Repository\\LitRepository' => __DIR__ . '/../..' . '/src/Repository/LitRepository.php',
         'App\\Repository\\PatientRepository' => __DIR__ . '/../..' . '/src/Repository/PatientRepository.php',
         'App\\Repository\\PersonnelRepository' => __DIR__ . '/../..' . '/src/Repository/PersonnelRepository.php',
-        'App\\Repository\\RoleRepository' => __DIR__ . '/../..' . '/src/Repository/RoleRepository.php',
         'App\\Repository\\SejourRepository' => __DIR__ . '/../..' . '/src/Repository/SejourRepository.php',
         'App\\Repository\\ServiceRepository' => __DIR__ . '/../..' . '/src/Repository/ServiceRepository.php',
         'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
@@ -1751,6 +1751,7 @@ class ComposerStaticInitf866965c47294d11c79c380f5b1d7a26
         'Doctrine\\Persistence\\Proxy' => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence/Proxy.php',
         'Doctrine\\Persistence\\Reflection\\EnumReflectionProperty' => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence/Reflection/EnumReflectionProperty.php',
         'Doctrine\\Persistence\\Reflection\\RuntimePublicReflectionProperty' => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence/Reflection/RuntimePublicReflectionProperty.php',
+        'Doctrine\\Persistence\\Reflection\\RuntimeReflectionProperty' => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence/Reflection/RuntimeReflectionProperty.php',
         'Doctrine\\Persistence\\Reflection\\TypedNoDefaultReflectionProperty' => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence/Reflection/TypedNoDefaultReflectionProperty.php',
         'Doctrine\\Persistence\\Reflection\\TypedNoDefaultReflectionPropertyBase' => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence/Reflection/TypedNoDefaultReflectionPropertyBase.php',
         'Doctrine\\Persistence\\Reflection\\TypedNoDefaultRuntimePublicReflectionProperty' => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence/Reflection/TypedNoDefaultRuntimePublicReflectionProperty.php',
@@ -6420,9 +6421,9 @@ class ComposerStaticInitf866965c47294d11c79c380f5b1d7a26
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf866965c47294d11c79c380f5b1d7a26::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf866965c47294d11c79c380f5b1d7a26::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf866965c47294d11c79c380f5b1d7a26::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7163cbe7d03605ee9bdf6200131b1ec8::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7163cbe7d03605ee9bdf6200131b1ec8::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7163cbe7d03605ee9bdf6200131b1ec8::$classMap;
 
         }, null, ClassLoader::class);
     }
