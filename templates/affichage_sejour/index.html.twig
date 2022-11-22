@@ -25,12 +25,12 @@
 {% for sejour in sejours %}
     <tr>
         <td>{{ sejour.patient.nom }} {{ sejour.patient.prenom }}</td>
-        <td>{{ sejour.lit.chambre.service.libelle }}</td>
-        <td>{{ sejour.lit.chambre.numero }}</td>
-        <td>{{ sejour.lit.numero }}</td>
+        <td>{#{ sejour.lit.chambre.service.libelle }#}</td>
+        <td>{#{ sejour.lit.chambre.numero }#}</td>
+        <td>{{ sejour.lit.id }}</td>
         <td>{{ sejour.commentaire }}</td>
-        <td>{{ sejour.date_arr }}</td>
-        <td>{{ sejour.dat_sort }}</td>
+        <td>{{ sejour.dateArr | date('d-m-Y')}}</td>
+        <td>{{ sejour.dateSort | date('d-m-Y')}}</td>
     </tr>
 {% else %}
     Pas de patients

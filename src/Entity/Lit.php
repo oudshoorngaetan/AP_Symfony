@@ -35,18 +35,6 @@ class Lit
         return $this->id;
     }
 
-    public function getNumero(): ?int
-    {
-        return $this->numero;
-    }
-
-    public function setNumero(int $numero): self
-    {
-        $this->numero = $numero;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Sejour>
      */

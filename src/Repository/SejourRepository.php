@@ -30,6 +30,8 @@ class SejourRepository extends ServiceEntityRepository
         }
     }
 
+    
+
     public function remove(Sejour $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);

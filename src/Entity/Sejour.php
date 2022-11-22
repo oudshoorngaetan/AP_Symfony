@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Lit;
 use App\Repository\SejourRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
