@@ -12,13 +12,7 @@ use App\Form\SejourType;
 
 class SejourController extends AbstractController
 {
-    #[Route('/sejour', name: 'app_sejour')]
-    public function index(): Response
-    {
-        return $this->render('sejour/index.html.twig', [
-            'controller_name' => 'SejourController',
-        ]);
-    }
+   
 
 
    
@@ -35,10 +29,11 @@ class SejourController extends AbstractController
                 $em->persist($sejour);
                 $em->flush();
                 // redirection vers la liste des adhérents
-                return $this->redirectToRoute('app_sejour');
+                return $this->redirectToRoute('app_affichage_sejour');
                 //NOM DE LOGIQUE APP_ADHERENTS
          }
-        return $this->render('sejour/index.html.twig', array(
+        return $this->render('sejour/ajout.html.twig', array(
+            'title'=>"Ajouter un séjour",
             'form' => $form->createView(),
         ));
     }
@@ -59,11 +54,56 @@ class SejourController extends AbstractController
               $em->persist($sejour);
               $em->flush();
               // redirection vers la liste des adhérents
-              return $this->redirectToRoute('app_sejour');
+              return $this->redirectToRoute('app_affichage_sejour');
               //NOM DE LOGIQUE APP_ADHERENTS
             }
-    return $this->render('sejour/index.html.twig', array(
+    return $this->render('sejour/ajout.html.twig', array(
+        'title'=>"Modifiez le sejour",
         'form' => $form->createView(),
+    ));
+    }
+
+    #[Route('/unsejour/{id}', name: 'unsejour')]
+    public function sejourId(ManagerRegistry $doctrine, $id, Request $request): Response
+    {
+        $repository = $doctrine->getRepository(Sejour::class);
+        $leSejour = $repository->find($id);
+
+        return $this->render('affichage_sejour/unSejour.html.twig', array(
+            'sejour' => $leSejour,
+            'title' => 'Le sejour'
+    ));
+    }
+  
+    #[Route('/ajoutEtat/{id}', name: 'etatsejour')]
+    public function etatSejour(ManagerRegistry $doctrine, $id, Request $request): Response
+    {
+        $repository = $doctrine->getRepository(Sejour::class);
+        $leSejour = $repository->find($id);
+        $leSejour->setEtat(1);
+        $em=$doctrine->getManager();
+        $em->persist($leSejour);
+        $em->flush();
+        return $this->redirectToRoute('app_affichage_sejour');
+        return $this->render('affichage_sejour/unSejour.html.twig', array(
+            'sejour' => $leSejour,
+            'title' => 'Le sejour'
+    ));
+    }
+  
+    #[Route('/ajoutEtatSortie/{id}', name: 'ajoutEtatSortie')]
+    public function etatSejourSortie(ManagerRegistry $doctrine, $id, Request $request): Response
+    {
+        $repository = $doctrine->getRepository(Sejour::class);
+        $leSejour = $repository->find($id);
+        $leSejour->setEtat(2);
+        $em=$doctrine->getManager();
+        $em->persist($leSejour);
+        $em->flush();
+        return $this->redirectToRoute('app_affichage_sejour');
+        return $this->render('affichage_sejour/unSejour.html.twig', array(
+            'sejour' => $leSejour,
+            'title' => 'Le sejour'
     ));
     }
 

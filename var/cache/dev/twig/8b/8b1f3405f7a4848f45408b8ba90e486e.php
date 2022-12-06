@@ -56,26 +56,30 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         ";
         // line 8
-        echo "        ";
+        echo "        <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.css"), "html", null, true);
+        echo "\">
+        ";
+        // line 9
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
+        // line 12
         echo "
         ";
-        // line 12
+        // line 13
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 16
         echo "    </head>
     <body>
     <header>
      ";
-        // line 18
+        // line 19
         $this->displayBlock('header', $context, $blocks);
-        // line 21
+        // line 22
         echo "    </header>
         ";
-        // line 22
-        $this->displayBlock('body', $context, $blocks);
         // line 23
+        $this->displayBlock('body', $context, $blocks);
+        // line 24
         echo "    </body>
 </html>
 ";
@@ -106,7 +110,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 
     }
 
-    // line 8
+    // line 9
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -116,7 +120,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
+        // line 10
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -129,7 +133,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 
     }
 
-    // line 12
+    // line 13
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -139,7 +143,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
+        // line 14
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -152,7 +156,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 
     }
 
-    // line 18
+    // line 19
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -162,10 +166,10 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 19
-        echo "      ";
-        $this->loadTemplate("base/nav.html.twig", "base.html.twig", 19)->display($context);
         // line 20
+        echo "      ";
+        $this->loadTemplate("base/nav.html.twig", "base.html.twig", 20)->display($context);
+        // line 21
         echo "     ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -175,7 +179,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
 
     }
 
-    // line 22
+    // line 23
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -198,9 +202,14 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  179 => 22,  169 => 20,  166 => 19,  156 => 18,  143 => 13,  133 => 12,  120 => 9,  110 => 8,  91 => 5,  79 => 23,  77 => 22,  74 => 21,  72 => 18,  67 => 15,  65 => 12,  62 => 11,  59 => 8,  54 => 5,  48 => 1,);
+        return array (  183 => 23,  173 => 21,  170 => 20,  160 => 19,  147 => 14,  137 => 13,  124 => 10,  114 => 9,  95 => 5,  83 => 24,  81 => 23,  78 => 22,  76 => 19,  71 => 16,  69 => 13,  66 => 12,  64 => 9,  59 => 8,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -212,6 +221,7 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('css/style.css') }}\">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -229,6 +239,6 @@ class __TwigTemplate_6bc9a9867b96688b2dc37173756fa065 extends Template
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/sio2022/Documents/Symfony/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base.html.twig");
+", "base.html.twig", "/home/sio2022/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base.html.twig");
     }
 }

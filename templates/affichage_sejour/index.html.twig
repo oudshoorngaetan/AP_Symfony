@@ -31,10 +31,13 @@
         <td>{{ sejour.commentaire }}</td>
         <td>{{ sejour.dateArr | date('d-m-Y')}}</td>
         <td>{{ sejour.dateSort | date('d-m-Y')}}</td>
+           <td><a href="{{ path('unsejour', {id:sejour.id}) }}"><button type="button">Afficher</button></a></td>
     </tr>
 {% else %}
     Pas de patients
 {% endfor %}
     </tbody>
 </table>
+
+<a href=><button type="button">Afficher</button></a>
 {% endblock %}

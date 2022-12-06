@@ -40,33 +40,62 @@ class __TwigTemplate_c2744c0d85cb7b847af5ff7b2567333a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base/nav.html.twig"));
 
         // line 1
-        echo "<nav>
+        echo "<nav class=\"menu\">
 
-<a class=\"button\" href=\"";
-        // line 3
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
-        echo "\">Inscription</a>
+<ul class=\"nav_links\">
 ";
         // line 4
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
             // line 5
-            echo "Connecté en tant que ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 5, $this->source); })()), "user", [], "any", false, false, false, 5), "email", [], "any", false, false, false, 5), "html", null, true);
-            echo "
-<a href=\"";
+            echo "    <li>
+        <a href=\"";
             // line 6
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\"> logout </a>
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("patients");
+            echo "\"> Gestion des patients </a>
+    </li>
+    <li>
+        <a class=\"button\" href=\"";
+            // line 9
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+            echo "\">Inscription</a>
+    </li>
 ";
-        } else {
-            // line 8
-            echo "<a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo "\"> Login </a>
+        } elseif ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 12
+            echo "    <li>
+        <a href=\"";
+            // line 13
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affichage_sejour");
+            echo "\"> Gestion des séjours </a>
+    </li>
 ";
         }
-        // line 10
-        echo "</nav>";
+        // line 16
+        echo "
+";
+        // line 17
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 18
+            echo "    <li>
+        <a href=\"";
+            // line 19
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\"> Logout </a>
+    </li>
+";
+        } else {
+            // line 22
+            echo "    <li>
+        <a href=\"";
+            // line 23
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\"> Login </a>
+    </li>
+";
+        }
+        // line 26
+        echo "</ul>
+</nav>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -87,20 +116,37 @@ class __TwigTemplate_c2744c0d85cb7b847af5ff7b2567333a extends Template
 
     public function getDebugInfo()
     {
-        return array (  69 => 10,  63 => 8,  58 => 6,  53 => 5,  51 => 4,  47 => 3,  43 => 1,);
+        return array (  97 => 26,  91 => 23,  88 => 22,  82 => 19,  79 => 18,  77 => 17,  74 => 16,  68 => 13,  65 => 12,  59 => 9,  53 => 6,  50 => 5,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<nav>
+        return new Source("<nav class=\"menu\">
 
-<a class=\"button\" href=\"{{path('app_register')}}\">Inscription</a>
-{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-Connecté en tant que {{ app.user.email }}
-<a href=\"{{ path('app_logout') }}\"> logout </a>
-{% else %}
-<a href=\"{{ path('app_login') }}\"> Login </a>
+<ul class=\"nav_links\">
+{% if is_granted('ROLE_ADMIN') %}
+    <li>
+        <a href=\"{{ path('patients') }}\"> Gestion des patients </a>
+    </li>
+    <li>
+        <a class=\"button\" href=\"{{path('app_register')}}\">Inscription</a>
+    </li>
+{% elseif is_granted('ROLE_USER') %}
+    <li>
+        <a href=\"{{ path('app_affichage_sejour') }}\"> Gestion des séjours </a>
+    </li>
 {% endif %}
-</nav>", "base/nav.html.twig", "/home/sio2022/Documents/Symfony/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base/nav.html.twig");
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <li>
+        <a href=\"{{ path('app_logout') }}\"> Logout </a>
+    </li>
+{% else %}
+    <li>
+        <a href=\"{{ path('app_login') }}\"> Login </a>
+    </li>
+{% endif %}
+</ul>
+</nav>", "base/nav.html.twig", "/home/sio2022/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base/nav.html.twig");
     }
 }

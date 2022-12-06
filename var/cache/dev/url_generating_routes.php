@@ -27,7 +27,9 @@ return [
     'creer_sejour' => [['id'], ['_controller' => 'App\\Controller\\PatientController::creerSejour'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/creer_sejour']], [], [], []],
     'app_principal' => [[], ['_controller' => 'App\\Controller\\PrincipalController::index'], [], [['text', '/principal']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
-    'app_sejour' => [[], ['_controller' => 'App\\Controller\\SejourController::index'], [], [['text', '/sejour']], [], [], []],
     'app_ajoutSejour' => [[], ['_controller' => 'App\\Controller\\SejourController::createClub'], [], [['text', '/createSejour']], [], [], []],
     'app_modifSejourId' => [['id'], ['_controller' => 'App\\Controller\\SejourController::modifd'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/modifSejour']], [], [], []],
+    'unsejour' => [['id'], ['_controller' => 'App\\Controller\\SejourController::sejourId'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/unsejour']], [], [], []],
+    'etatsejour' => [['id'], ['_controller' => 'App\\Controller\\SejourController::etatSejour'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ajoutEtat']], [], [], []],
+    'ajoutEtatSortie' => [['id'], ['_controller' => 'App\\Controller\\SejourController::etatSejourSortie'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ajoutEtatSortie']], [], [], []],
 ];
