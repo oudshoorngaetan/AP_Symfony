@@ -346,3 +346,8 @@ d151bf,127.0.0.1,GET,http://127.0.0.1:8000/,1670329568,,404
 394781,127.0.0.1,GET,http://127.0.0.1:8000/ajout_sejour,1670329576,1d94f3,404
 1d94f3,127.0.0.1,GET,http://127.0.0.1:8000/ajout_sejour,1670329576,,404
 06136a,127.0.0.1,GET,http://127.0.0.1:8000/createSejour,1670329592,,200
+193f2d,127.0.0.1,GET,http://localhost:8000/sejour/sejoursDeJour,1670334012,e601be,404
+e601be,127.0.0.1,GET,http://localhost:8000/sejour/sejoursDeJour,1670334012,,404
+a128dc,127.0.0.1,GET,http://localhost:8000/sejour/sejoursDuJour,1670334054,,302
+60cd41,127.0.0.1,GET,http://localhost:8000/sejour/sejours/06-12-2022,1670334054,28e720,500
+28e720,127.0.0.1,GET,http://localhost:8000/sejour/sejours/06-12-2022,1670334054,,500

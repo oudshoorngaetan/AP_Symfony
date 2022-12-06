@@ -42,9 +42,10 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/patient/([^/]++)(*:186)'
-                .'|/creer_sejour/([^/]++)(*:216)'
-                .'|/modifSejour/([^/]++)(*:245)'
+                .'|/sejour/sejours/([^/]++)(*:193)'
+                .'|/patient/([^/]++)(*:218)'
+                .'|/creer_sejour/([^/]++)(*:248)'
+                .'|/modifSejour/([^/]++)(*:277)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -55,9 +56,10 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        186 => [[['_route' => 'patient', '_controller' => 'App\\Controller\\PatientController::getUnPatient'], ['id'], null, null, false, true, null]],
-        216 => [[['_route' => 'creer_sejour', '_controller' => 'App\\Controller\\PatientController::creerSejour'], ['id'], null, null, false, true, null]],
-        245 => [
+        193 => [[['_route' => 'app_sejour_date', '_controller' => 'App\\Controller\\AffichageSejourController::sejoursDate'], ['date'], null, null, false, true, null]],
+        218 => [[['_route' => 'patient', '_controller' => 'App\\Controller\\PatientController::getUnPatient'], ['id'], null, null, false, true, null]],
+        248 => [[['_route' => 'creer_sejour', '_controller' => 'App\\Controller\\PatientController::creerSejour'], ['id'], null, null, false, true, null]],
+        277 => [
             [['_route' => 'app_modifSejourId', '_controller' => 'App\\Controller\\SejourController::modifd'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

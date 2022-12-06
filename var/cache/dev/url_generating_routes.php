@@ -18,6 +18,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'app_affichage_sejour' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::index'], [], [['text', '/sejour/sejours']], [], [], []],
     'app_sejour_du_jour' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::sejoursDuJour'], [], [['text', '/sejour/sejoursDuJour']], [], [], []],
+    'app_sejour_date' => [['date'], ['_controller' => 'App\\Controller\\AffichageSejourController::sejoursDate'], [], [['variable', '/', '[^/]++', 'date', true], ['text', '/sejour/sejours']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\LoginController::index'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
     'patients' => [[], ['_controller' => 'App\\Controller\\PatientController::getPatients'], [], [['text', '/patients']], [], [], []],
