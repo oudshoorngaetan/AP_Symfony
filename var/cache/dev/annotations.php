@@ -60,6 +60,8 @@ return [[
 '[C]App%5CController%5CAffichageSejourController%23index' => 1,
 'App%5CController%5CAffichageSejourController%23sejoursDuJour' => 0,
 '[C]App%5CController%5CAffichageSejourController%23sejoursDuJour' => 1,
+'App%5CController%5CAffichageSejourController%23sejoursDate' => 0,
+'[C]App%5CController%5CAffichageSejourController%23sejoursDate' => 1,
 'App%5CController%5CLoginController' => 0,
 '[C]App%5CController%5CLoginController' => 1,
 'App%5CController%5CLoginController%23index' => 0,
@@ -860,6 +862,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1670333875,
+1 => 1670337501,
 
 ]];

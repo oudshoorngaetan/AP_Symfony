@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Sejour;
-use App\Form\DateType;
+use App\Form\DateAffichageType;
 use Symfony\Component\HttpFoundation\Request;
 
 class AffichageSejourController extends AbstractController
@@ -35,8 +35,6 @@ class AffichageSejourController extends AbstractController
     #[Route('/sejour/sejours/{date}', name: 'app_sejour_date')]
     public function sejoursDate(ManagerRegistry $doctrine, Request $request, $date): Response
     {
-        $form = $this->createForm(DateType::class, $date);
-        $form->handleRequest($request);
         // Récupère la classe Sejour
         $repository=$doctrine->getRepository(Sejour::class);
         // Récupère tous les séjours
@@ -51,7 +49,8 @@ class AffichageSejourController extends AbstractController
         return $this->render('affichage_sejour/index.html.twig', [
             'controller_name' => 'Séjours du '.$dateDuJour->format('d-m-Y'),
             'sejours'         => $lesSejours,
-            'formulaire'      => $form,
+            //'formulaire'      => $form,
+            'request'         => $request,
         ]);
     }
 

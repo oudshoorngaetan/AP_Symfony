@@ -146,6 +146,6 @@ class __TwigTemplate_bc6a620ab99d3d3d4dcdbd397ed0cb28 extends Template
         </div>
     </div>
 {% endblock %}
-", "@WebProfiler/Profiler/toolbar_redirect.html.twig", "/home/sio2022/Documents/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_redirect.html.twig");
+", "@WebProfiler/Profiler/toolbar_redirect.html.twig", "/home/sio2022/Documents/Symfony/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_redirect.html.twig");
     }
 }

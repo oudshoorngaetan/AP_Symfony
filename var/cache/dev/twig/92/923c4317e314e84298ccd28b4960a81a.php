@@ -298,6 +298,6 @@ $context["trace"], "level", [], "any", false, false, false, 57) == 2)) {
     Note: These matching logs are based on the current router configuration,
     which might differ from the configuration used when profiling this request.
 </p>
-", "@WebProfiler/Router/panel.html.twig", "/home/sio2022/Documents/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/web-profiler-bundle/Resources/views/Router/panel.html.twig");
+", "@WebProfiler/Router/panel.html.twig", "/home/sio2022/Documents/Symfony/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/web-profiler-bundle/Resources/views/Router/panel.html.twig");
     }
 }

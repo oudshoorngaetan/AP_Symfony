@@ -220,6 +220,6 @@ a.doc:hover {
     top: -7em;
     visibility: hidden;
 }
-", "@WebProfiler/Profiler/open.css.twig", "/home/sio2022/Documents/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.css.twig");
+", "@WebProfiler/Profiler/open.css.twig", "/home/sio2022/Documents/Symfony/AP_Symfony_Sejour_lang-miroux-oudshoorn/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.css.twig");
     }
 }
