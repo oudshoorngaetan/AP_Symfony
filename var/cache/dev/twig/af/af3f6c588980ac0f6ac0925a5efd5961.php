@@ -153,6 +153,6 @@ class __TwigTemplate_64706656d75764610ff2cf9e9ccda9e9 extends Template
         <button type=\"submit\" class=\"btn\">Register</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
-", "registration/register.html.twig", "/home/sio2022/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/registration/register.html.twig");
+", "registration/register.html.twig", "/home/sio2022/Documents/Symfony/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/registration/register.html.twig");
     }
 }
