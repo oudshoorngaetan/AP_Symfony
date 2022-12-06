@@ -342,3 +342,7 @@ ffc392,127.0.0.1,GET,http://localhost:8000/sejour/sejoursDuJour,1669133266,,200
 3518e2,127.0.0.1,GET,http://localhost:8000/sejour/sejoursDuJour,1669133267,,200
 9fb13e,127.0.0.1,GET,http://localhost:8000/sejour/sejoursDuJour,1669133273,,200
 aa3115,127.0.0.1,GET,http://localhost:8000/sejour/sejoursDuJour,1669133274,,200
+d151bf,127.0.0.1,GET,http://127.0.0.1:8000/,1670329568,,404
+394781,127.0.0.1,GET,http://127.0.0.1:8000/ajout_sejour,1670329576,1d94f3,404
+1d94f3,127.0.0.1,GET,http://127.0.0.1:8000/ajout_sejour,1670329576,,404
+06136a,127.0.0.1,GET,http://127.0.0.1:8000/createSejour,1670329592,,200

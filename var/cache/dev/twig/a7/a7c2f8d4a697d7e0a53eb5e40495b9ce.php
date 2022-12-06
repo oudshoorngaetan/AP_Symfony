@@ -151,6 +151,6 @@ class __TwigTemplate_6071f1ca372b554e6a1a03e140901795 extends Template
 </div>
 
 {% endblock %}
-", "patient/ajout.html.twig", "/home/sio2022/Documents/Symfony/Projet/Aled/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/patient/ajout.html.twig");
+", "patient/ajout.html.twig", "/home/sio2022/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/patient/ajout.html.twig");
     }
 }

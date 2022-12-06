@@ -23,6 +23,7 @@ return [
     'patients' => [[], ['_controller' => 'App\\Controller\\PatientController::getPatients'], [], [['text', '/patients']], [], [], []],
     'ajout_patient' => [[], ['_controller' => 'App\\Controller\\PatientController::ajoutPatient'], [], [['text', '/ajout_patient']], [], [], []],
     'patient' => [['id'], ['_controller' => 'App\\Controller\\PatientController::getUnPatient'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/patient']], [], [], []],
+    'creer_sejour' => [['id'], ['_controller' => 'App\\Controller\\PatientController::creerSejour'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/creer_sejour']], [], [], []],
     'app_principal' => [[], ['_controller' => 'App\\Controller\\PrincipalController::index'], [], [['text', '/principal']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_sejour' => [[], ['_controller' => 'App\\Controller\\SejourController::index'], [], [['text', '/sejour']], [], [], []],

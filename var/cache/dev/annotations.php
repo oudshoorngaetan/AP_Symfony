@@ -74,6 +74,8 @@ return [[
 '[C]App%5CController%5CPatientController%23ajoutPatient' => 1,
 'App%5CController%5CPatientController%23getUnPatient' => 0,
 '[C]App%5CController%5CPatientController%23getUnPatient' => 1,
+'App%5CController%5CPatientController%23creerSejour' => 0,
+'[C]App%5CController%5CPatientController%23creerSejour' => 1,
 'App%5CController%5CPrincipalController' => 0,
 '[C]App%5CController%5CPrincipalController' => 1,
 'App%5CController%5CPrincipalController%23index' => 0,
@@ -858,6 +860,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1669132677,
+1 => 1670329559,
 
 ]];
