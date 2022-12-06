@@ -10,6 +10,9 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use App\Entity\Patient;
+use App\Entity\Sejour;
+use App\Form\PatientType;
+use App\Form\SejourType;
 
 class PatientController extends AbstractController
 {
@@ -31,15 +34,7 @@ class PatientController extends AbstractController
     {
         $em = $doctrine->getManager();
         $patient = new Patient();
-        $form = $this->createFormBuilder($patient)
-            ->add('nom', TextType::class, array('label' => 'Nom du patient :'))
-            ->add('prenom', TextType::class, array('label' => 'Prénom du patient :'))
-            ->add('telephone', TextType::class, array('label' => 'Téléphone :'))
-            ->add('adresse', TextType::class, array('label' => 'Adresse de domicile :'))
-            ->add('ville', TextType::class, array('label' => 'Ville :'))
-            ->add('cp', TextType::class, array('label' => 'Code postal :'))
-            ->add('save', SubmitType::class, array('label' => 'Enregistrer'))
-            ->getForm();
+        $form = $this->createForm(PatientType::class, $patient);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $patient = $form->getData();
@@ -60,15 +55,8 @@ class PatientController extends AbstractController
         $repository=$doctrine->getRepository(Patient::class);
         $patient = $repository->find($id);
         $em = $doctrine->getManager();
-        $form = $this->createFormBuilder($patient)
-            ->add('nom', TextType::class, array('label' => 'Nom du patient :'))
-            ->add('prenom', TextType::class, array('label' => 'Prénom du patient :'))
-            ->add('telephone', TextType::class, array('label' => 'Téléphone :'))
-            ->add('adresse', TextType::class, array('label' => 'Adresse de domicile :'))
-            ->add('ville', TextType::class, array('label' => 'Ville :'))
-            ->add('cp', TextType::class, array('label' => 'Code postal :'))
-            ->add('save', SubmitType::class, array('label' => 'Enregistrer'))
-            ->getForm();
+
+        $form = $this->createForm(PatientType::class, $patient);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $patient = $form->getData();
@@ -76,6 +64,31 @@ class PatientController extends AbstractController
             $em->flush();
             return $this->redirectToRoute('patients');
         }
+        return $this->render('patient/ajout.html.twig', array(
+            'form' => $form->createView(),
+            'title' => 'Modif d\'un patient'
+        ));
+    }
+
+    // FORMULAIRE DE CREATION SEJOUR POUR UN PATIENT
+    #[Route('/creer_sejour/{id}', name: 'creer_sejour')]
+    public function creerSejour(ManagerRegistry $doctrine, Request $request, $id): Response
+    {
+        $repository=$doctrine->getRepository(Patient::class);
+        $patient = $repository->find($id);
+        $em = $doctrine->getManager();
+        $sejour=new Sejour();
+       
+        $form = $this->createForm(SejourType::class, $sejour);
+        $form->handleRequest($request);
+          if ($form->isSubmitted() && $form->isValid()) {
+              $sejour = $form->getData();
+              $sejour->setPatient($patient);
+              $em->persist($sejour);
+              $em->flush();
+              // redirection vers la liste des adhérents
+              return $this->redirectToRoute('app_sejour');
+          }
         return $this->render('patient/ajout.html.twig', array(
             'form' => $form->createView(),
             'title' => 'Modif d\'un patient'
