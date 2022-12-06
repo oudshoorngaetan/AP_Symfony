@@ -21,6 +21,7 @@
             <td>{{ patient.telephone }}</td>
             <td>{{ patient.adresse }} {{ patient.cp }} {{ patient.ville }}</td>
             <td><a href="{{ path('patient', {id:patient.id}) }}"><button type="button">Modifier</button></a></td>
+            <td><a href="{{ path('creer_sejour', {id:patient.id}) }}"><button type="button">Ajouter un séjour</button></a></td>
         </tr>
     {% else %}
         <p> Pas de patients </p>

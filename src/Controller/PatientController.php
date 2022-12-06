@@ -74,16 +74,12 @@ class PatientController extends AbstractController
     #[Route('/creer_sejour/{id}', name: 'creer_sejour')]
     public function creerSejour(ManagerRegistry $doctrine, Request $request, $id): Response
     {
-        $repository=$doctrine->getRepository(Patient::class);
-        $patient = $repository->find($id);
         $em = $doctrine->getManager();
         $sejour=new Sejour();
-       
         $form = $this->createForm(SejourType::class, $sejour);
         $form->handleRequest($request);
           if ($form->isSubmitted() && $form->isValid()) {
               $sejour = $form->getData();
-              $sejour->setPatient($patient);
               $em->persist($sejour);
               $em->flush();
               // redirection vers la liste des adhérents

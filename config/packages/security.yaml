@@ -38,10 +38,14 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/register, roles: ROLE_ADMIN }
-        - { path: ^/ajout_patient, roles: ROLE_INFIRMIER }
+        - { path: ^/patients, roles: ROLE_ADMIN }
         - { path: ^/ajout_patient, roles: ROLE_ADMIN }
-        - { path: ^/patient, roles: ROLE_INFIRMIER}
-        - { path: ^/sejour/affichage, roles: ROLE_ADMIN }
+        - { path: ^/patient, roles: ROLE_ADMIN }
+        - { path: ^/sejour/sejours, roles: ROLE_INFIRMIER }
+        - { path: ^/sejour/sejoursDuJour, roles: ROLE_INFIRMIER }
+        - { path: ^/createSejour, roles: ROLE_INFIRMIER }
+        - { path: ^/modifSejour, roles: ROLE_INFIRMIER }
+        - { path: ^/createSejour, roles: ROLE_INFIRMIER }
        
 
 when@test:
