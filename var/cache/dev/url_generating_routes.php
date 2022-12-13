@@ -18,6 +18,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'app_affichage_sejour' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::index'], [], [['text', '/sejour/sejours']], [], [], []],
     'app_sejour_du_jour' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::sejoursDuJour'], [], [['text', '/sejour/sejoursDuJour']], [], [], []],
+    'app_sejours_arrivee' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::SejourActuel'], [], [['text', '/sejour/sejoursArrivee']], [], [], []],
     'app_sejour_date' => [['date'], ['_controller' => 'App\\Controller\\AffichageSejourController::sejoursDate'], [], [['variable', '/', '[^/]++', 'date', true], ['text', '/sejour/sejours']], [], [], []],
     'app_sejour_effectif' => [['date'], ['_controller' => 'App\\Controller\\AffichageSejourController::sejoursEffectif'], [], [['variable', '/', '[^/]++', 'date', true], ['text', '/sejour/sejoursEffectif']], [], [], []],
     'app_menuSejour' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::menuSejour'], [], [['text', '/sejour/menuSejour']], [], [], []],
@@ -33,7 +34,5 @@ return [
     'app_ajoutSejour' => [[], ['_controller' => 'App\\Controller\\SejourController::createClub'], [], [['text', '/createSejour']], [], [], []],
     'app_modifSejourId' => [['id'], ['_controller' => 'App\\Controller\\SejourController::modifd'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/modifSejour']], [], [], []],
     'unsejour' => [['id'], ['_controller' => 'App\\Controller\\SejourController::sejourId'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/unsejour']], [], [], []],
-    'etatsejour' => [['id'], ['_controller' => 'App\\Controller\\SejourController::etatSejour'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ajoutEtat']], [], [], []],
-    'ajoutEtatSortie' => [['id'], ['_controller' => 'App\\Controller\\SejourController::etatSejourSortie'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ajoutEtatSortie']], [], [], []],
     'sejourActu' => [[], ['_controller' => 'App\\Controller\\SejourController::SejourActuel'], [], [['text', '/sejour/sejourActuel']], [], [], []],
 ];

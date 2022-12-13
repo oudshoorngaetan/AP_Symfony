@@ -79,11 +79,12 @@ class PatientController extends AbstractController
         $form = $this->createForm(SejourType::class, $sejour);
         $form->handleRequest($request);
           if ($form->isSubmitted() && $form->isValid()) {
+                $sejour->setEtat(0);
               $sejour = $form->getData();
               $em->persist($sejour);
               $em->flush();
               // redirection vers la liste des adhérents
-              return $this->redirectToRoute('app_sejour');
+              return $this->redirectToRoute('patients');
           }
         return $this->render('patient/ajout.html.twig', array(
             'form' => $form->createView(),

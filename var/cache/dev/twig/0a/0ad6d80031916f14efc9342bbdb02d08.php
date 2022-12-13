@@ -52,48 +52,52 @@ class __TwigTemplate_c2744c0d85cb7b847af5ff7b2567333a extends Template
             // line 6
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("patients");
             echo "\"> Gestion des patients </a>
+        <a href=\"";
+            // line 7
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affichage_sejour");
+            echo "\"> Gestion des séjours </a>
     </li>
     <li>
         <a class=\"button\" href=\"";
-            // line 9
+            // line 10
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             echo "\">Inscription</a>
     </li>
 ";
-        } elseif ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 12
+        } elseif ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_INFIRMIER")) {
+            // line 13
             echo "    <li>
         <a href=\"";
-            // line 13
+            // line 14
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_menuSejour");
             echo "\"> Gestion des séjours </a>
     </li>
 ";
         }
-        // line 16
+        // line 17
         echo "
 ";
-        // line 17
+        // line 18
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 18
+            // line 19
             echo "    <li>
         <a href=\"";
-            // line 19
+            // line 20
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\"> Logout </a>
     </li>
 ";
         } else {
-            // line 22
+            // line 23
             echo "    <li>
         <a href=\"";
-            // line 23
+            // line 24
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\"> Login </a>
     </li>
 ";
         }
-        // line 26
+        // line 27
         echo "</ul>
 </nav>";
         
@@ -116,7 +120,7 @@ class __TwigTemplate_c2744c0d85cb7b847af5ff7b2567333a extends Template
 
     public function getDebugInfo()
     {
-        return array (  97 => 26,  91 => 23,  88 => 22,  82 => 19,  79 => 18,  77 => 17,  74 => 16,  68 => 13,  65 => 12,  59 => 9,  53 => 6,  50 => 5,  48 => 4,  43 => 1,);
+        return array (  101 => 27,  95 => 24,  92 => 23,  86 => 20,  83 => 19,  81 => 18,  78 => 17,  72 => 14,  69 => 13,  63 => 10,  57 => 7,  53 => 6,  50 => 5,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +131,12 @@ class __TwigTemplate_c2744c0d85cb7b847af5ff7b2567333a extends Template
 {% if is_granted('ROLE_ADMIN') %}
     <li>
         <a href=\"{{ path('patients') }}\"> Gestion des patients </a>
+        <a href=\"{{ path('app_affichage_sejour') }}\"> Gestion des séjours </a>
     </li>
     <li>
         <a class=\"button\" href=\"{{path('app_register')}}\">Inscription</a>
     </li>
-{% elseif is_granted('ROLE_USER') %}
+{% elseif is_granted('ROLE_INFIRMIER') %}
     <li>
         <a href=\"{{ path('app_menuSejour') }}\"> Gestion des séjours </a>
     </li>
@@ -147,6 +152,6 @@ class __TwigTemplate_c2744c0d85cb7b847af5ff7b2567333a extends Template
     </li>
 {% endif %}
 </ul>
-</nav>", "base/nav.html.twig", "/home/sio2022/Documents/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base/nav.html.twig");
+</nav>", "base/nav.html.twig", "/home/sio2022/Documents/Symfony/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base/nav.html.twig");
     }
 }

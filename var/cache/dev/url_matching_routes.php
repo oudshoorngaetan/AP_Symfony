@@ -16,6 +16,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/sejour/sejours' => [[['_route' => 'app_affichage_sejour', '_controller' => 'App\\Controller\\AffichageSejourController::index'], null, null, null, false, false, null]],
         '/sejour/sejoursDuJour' => [[['_route' => 'app_sejour_du_jour', '_controller' => 'App\\Controller\\AffichageSejourController::sejoursDuJour'], null, null, null, false, false, null]],
+        '/sejour/sejoursArrivee' => [[['_route' => 'app_sejours_arrivee', '_controller' => 'App\\Controller\\AffichageSejourController::SejourActuel'], null, null, null, false, false, null]],
         '/sejour/menuSejour' => [[['_route' => 'app_menuSejour', '_controller' => 'App\\Controller\\AffichageSejourController::menuSejour'], null, null, null, false, false, null]],
         '/sejour/sejourAVenir' => [[['_route' => 'app_sejour_a_venir', '_controller' => 'App\\Controller\\AffichageSejourController::sejourAVenir'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\LoginController::index'], null, null, null, false, false, null]],
@@ -52,10 +53,6 @@ return [
                 .'|/creer_sejour/([^/]++)(*:277)'
                 .'|/modifSejour/([^/]++)(*:306)'
                 .'|/unsejour/([^/]++)(*:332)'
-                .'|/ajoutEtat(?'
-                    .'|/([^/]++)(*:362)'
-                    .'|Sortie/([^/]++)(*:385)'
-                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -71,10 +68,8 @@ return [
         247 => [[['_route' => 'patient', '_controller' => 'App\\Controller\\PatientController::getUnPatient'], ['id'], null, null, false, true, null]],
         277 => [[['_route' => 'creer_sejour', '_controller' => 'App\\Controller\\PatientController::creerSejour'], ['id'], null, null, false, true, null]],
         306 => [[['_route' => 'app_modifSejourId', '_controller' => 'App\\Controller\\SejourController::modifd'], ['id'], null, null, false, true, null]],
-        332 => [[['_route' => 'unsejour', '_controller' => 'App\\Controller\\SejourController::sejourId'], ['id'], null, null, false, true, null]],
-        362 => [[['_route' => 'etatsejour', '_controller' => 'App\\Controller\\SejourController::etatSejour'], ['id'], null, null, false, true, null]],
-        385 => [
-            [['_route' => 'ajoutEtatSortie', '_controller' => 'App\\Controller\\SejourController::etatSejourSortie'], ['id'], null, null, false, true, null],
+        332 => [
+            [['_route' => 'unsejour', '_controller' => 'App\\Controller\\SejourController::sejourId'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

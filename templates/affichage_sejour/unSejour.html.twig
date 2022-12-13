@@ -31,10 +31,15 @@
     {{ form_widget(form) }}
      {{ form_end(form) }}
  </p>  
-
-       
-
-{% if sejour.etat == 0 %}
-           <td><a href="{{ path('etatsejour', {id:sejour.id}) }}"><button type="button">Valider départ</button></a></td>
-{% endif %}
+ <script>
+if({{ sejour.etat }} == 0){
+        document.getElementById('commentaire_save').textContent = document.getElementById('commentaire_save').textContent + " entrée";
+}
+if({{ sejour.etat }} == 1){
+        document.getElementById('commentaire_save').textContent = document.getElementById('commentaire_save').textContent + " sortie";
+}
+if({{ sejour.etat }} == 2){
+        document.getElementById('commentaire_save').style.display = "none";
+}
+ </script>
 {% endblock %}

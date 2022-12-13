@@ -32,6 +32,25 @@ class AffichageSejourController extends AbstractController
         return $this->redirectToRoute('app_sejour_date',array('date'=>$date->format('d-m-Y')));
     }
 
+    #[Route('/sejour/sejoursArrivee', name: 'app_sejours_arrivee')]
+    public function SejourActuel(ManagerRegistry $doctrine, Request $request): Response
+    {
+        $repository = $doctrine->getRepository(Sejour::class);
+        $desSejours = $repository->findAll();
+        $lesSejours=Array();
+        $dateDuJour=new \DateTime();
+        foreach($desSejours as $unSejour){
+            if($unSejour->getEtat() == 0 && $unSejour->getDateArr()->format('Y-m-d') == $dateDuJour->format('Y-m-d')){
+                array_push($lesSejours, $unSejour);
+            }
+        }
+       
+        return $this->render('affichage_sejour/index.html.twig', array(
+            'sejours'         => $lesSejours,
+            'controller_name' => 'Le sejour'
+    ));
+    }
+
     #[Route('/sejour/sejours/{date}', name: 'app_sejour_date')]
     public function sejoursDate(ManagerRegistry $doctrine, Request $request, $date): Response
     {

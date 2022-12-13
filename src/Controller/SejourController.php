@@ -26,6 +26,7 @@ class SejourController extends AbstractController
           $form = $this->createForm(SejourType::class, $sejour);
           $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
+                $sejour->setEtat(0);
                 $sejour = $form->getData();
                 $em->persist($sejour);
                 $em->flush();
@@ -74,7 +75,13 @@ class SejourController extends AbstractController
         $form = $this->createForm(CommentaireType::class, $sejour);
         $form->handleRequest($request);
           if ($form->isSubmitted() && $form->isValid()) {
-              $sejour->setEtat(2);
+            if($sejour->getEtat() == 0){
+                $sejour->setEtat(1);
+            } else {
+                if($sejour->getEtat() == 1){
+                    $sejour->setEtat(2);
+                }
+            }
               $sejour = $form->getData();
               $em->persist($sejour);
               $em->flush();
@@ -85,44 +92,8 @@ class SejourController extends AbstractController
             
         return $this->render('affichage_sejour/unSejour.html.twig', array(
             'form' => $form->createView(),
-
             'sejour' => $sejour,
-            'title' => 'Le sejour'
-    ));
-    }
-  
-
-
-
-    #[Route('/ajoutEtat/{id}', name: 'etatsejour')]
-    public function etatSejour(ManagerRegistry $doctrine, $id, Request $request): Response
-    {
-        $repository = $doctrine->getRepository(Sejour::class);
-        $leSejour = $repository->find($id);
-        $leSejour->setEtat(1);
-        $em=$doctrine->getManager();
-        $em->persist($leSejour);
-        $em->flush();
-        return $this->redirectToRoute('app_affichage_sejour');
-        return $this->render('affichage_sejour/unSejour.html.twig', array(
-            'sejour' => $leSejour,
-            'title' => 'Le sejour'
-    ));
-    }
-  
-    #[Route('/ajoutEtatSortie/{id}', name: 'ajoutEtatSortie')]
-    public function etatSejourSortie(ManagerRegistry $doctrine, $id, Request $request): Response
-    {
-        $repository = $doctrine->getRepository(Sejour::class);
-        $leSejour = $repository->find($id);
-        $leSejour->setEtat(2);
-        $em=$doctrine->getManager();
-        $em->persist($leSejour);
-        $em->flush();
-        return $this->redirectToRoute('app_affichage_sejour');
-        return $this->render('affichage_sejour/unSejour.html.twig', array(
-            'sejour' => $leSejour,
-            'title' => 'Le sejour'
+            //'title' => 'Le sejour'
     ));
     }
 

@@ -14,7 +14,7 @@ class CommentaireType extends AbstractType
     {
         $builder
         ->add('commentaire', TextType::class, array('label'=>'Commentaire :'))
-        ->add('save', SubmitType::class, array('label' => 'Valider sortie'));
+        ->add('save', SubmitType::class, array('label' => 'Valider '));
 
         ;
     }

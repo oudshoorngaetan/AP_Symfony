@@ -4,11 +4,12 @@
 {% if is_granted('ROLE_ADMIN') %}
     <li>
         <a href="{{ path('patients') }}"> Gestion des patients </a>
+        <a href="{{ path('app_affichage_sejour') }}"> Gestion des séjours </a>
     </li>
     <li>
         <a class="button" href="{{path('app_register')}}">Inscription</a>
     </li>
-{% elseif is_granted('ROLE_USER') %}
+{% elseif is_granted('ROLE_INFIRMIER') %}
     <li>
         <a href="{{ path('app_menuSejour') }}"> Gestion des séjours </a>
     </li>
