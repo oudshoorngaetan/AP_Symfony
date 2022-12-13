@@ -22,7 +22,7 @@
         <th>Date de sortie</th>
     </thead>
     <tbody>
-{% for sejour in sejours|sort((a, b) => a.dateArr <=> b.dateArr) %}
+{% for sejour in sejours|sort((a, b) => a.patient.nom <=> b.patient.nom) %}
     <tr>
         <td>{{ sejour.patient.nom }} {{ sejour.patient.prenom }}</td>
         <td>{{ sejour.lit.chambre.service.libelle }}</td>
@@ -38,21 +38,4 @@
 {% endfor %}
     </tbody>
 </table>
-
-<p>Date :</p>
-<input type="date" id="datepicker">
-<button onclick="redirection()">Afficher</button>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-<script>
-function padTo2Digits(num) {
-  return num.toString().padStart(2, '0');
-}
-
-function redirection(){
-    var date = new Date(document.getElementById("datepicker").value);
-    date = padTo2Digits(date.getDate()) + '-' + padTo2Digits(date.getMonth()+1) + '-' + date.getFullYear();
-    window.location.href = "/sejour/sejours/"+date;
-}
-</script>
 {% endblock %}

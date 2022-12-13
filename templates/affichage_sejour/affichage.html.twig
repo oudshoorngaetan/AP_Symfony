@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AffichageSejourController!{% endblock %}
+
+{% block body %}
+
+<button><a href="{{ path('app_affichage_sejour') }}"> Tous les séjours </a></button>
+<button><a href="{{ path('app_sejour_du_jour') }}"> Arriver patients du jour </a></button>
+<button><a href="{{ path('ajoutEtatSortie') }}"> Sortie des patients</a></button>
+<p>Afficher les séjours effectifs à cette date :</p>
+<input type="date" id="datepicker">
+<button onclick="redirection()">Afficher</button>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+
+function redirection(){
+    var date = new Date(document.getElementById("datepicker").value);
+    date = padTo2Digits(date.getDate()) + '-' + padTo2Digits(date.getMonth()+1) + '-' + date.getFullYear();
+    window.location.href = "/sejour/sejoursEffectif/"+date;
+}
+</script>
+
+
+{% endblock %}

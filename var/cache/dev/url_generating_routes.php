@@ -19,6 +19,8 @@ return [
     'app_affichage_sejour' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::index'], [], [['text', '/sejour/sejours']], [], [], []],
     'app_sejour_du_jour' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::sejoursDuJour'], [], [['text', '/sejour/sejoursDuJour']], [], [], []],
     'app_sejour_date' => [['date'], ['_controller' => 'App\\Controller\\AffichageSejourController::sejoursDate'], [], [['variable', '/', '[^/]++', 'date', true], ['text', '/sejour/sejours']], [], [], []],
+    'app_sejour_effectif' => [['date'], ['_controller' => 'App\\Controller\\AffichageSejourController::sejoursEffectif'], [], [['variable', '/', '[^/]++', 'date', true], ['text', '/sejour/sejoursEffectif']], [], [], []],
+    'app_menuSejour' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::menuSejour'], [], [['text', '/sejour/menuSejour']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\LoginController::index'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
     'patients' => [[], ['_controller' => 'App\\Controller\\PatientController::getPatients'], [], [['text', '/patients']], [], [], []],
@@ -32,5 +34,4 @@ return [
     'unsejour' => [['id'], ['_controller' => 'App\\Controller\\SejourController::sejourId'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/unsejour']], [], [], []],
     'etatsejour' => [['id'], ['_controller' => 'App\\Controller\\SejourController::etatSejour'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ajoutEtat']], [], [], []],
     'ajoutEtatSortie' => [[], ['_controller' => 'App\\Controller\\SejourController::SejourActuel'], [], [['text', '/sejour/sejourActuel']], [], [], []],
-    'app_menuSejour' => [[], ['_controller' => 'App\\Controller\\SejourController::menuSejour'], [], [['text', '/sejour/menuSejour']], [], [], []],
 ];

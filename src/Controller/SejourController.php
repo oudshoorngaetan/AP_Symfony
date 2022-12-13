@@ -129,16 +129,4 @@ class SejourController extends AbstractController
     }
 
 
-    #[Route('/sejour/menuSejour', name: 'app_menuSejour')]
-    public function menuSejour(): Response
-    {
-        
-       
-        return $this->render('affichage_sejour/unSejour.html.twig', array(
-            
-            'controller_name' => 'Menu sejour',
-    ));
-    }
-
-
 }

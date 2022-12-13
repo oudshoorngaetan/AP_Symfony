@@ -65,7 +65,7 @@ class __TwigTemplate_c2744c0d85cb7b847af5ff7b2567333a extends Template
             echo "    <li>
         <a href=\"";
             // line 13
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affichage_sejour");
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_menuSejour");
             echo "\"> Gestion des séjours </a>
     </li>
 ";
@@ -133,7 +133,7 @@ class __TwigTemplate_c2744c0d85cb7b847af5ff7b2567333a extends Template
     </li>
 {% elseif is_granted('ROLE_USER') %}
     <li>
-        <a href=\"{{ path('app_affichage_sejour') }}\"> Gestion des séjours </a>
+        <a href=\"{{ path('app_menuSejour') }}\"> Gestion des séjours </a>
     </li>
 {% endif %}
 
@@ -147,6 +147,6 @@ class __TwigTemplate_c2744c0d85cb7b847af5ff7b2567333a extends Template
     </li>
 {% endif %}
 </ul>
-</nav>", "base/nav.html.twig", "/home/sio2022/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base/nav.html.twig");
+</nav>", "base/nav.html.twig", "/home/sio2022/Documents/Symfony/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/base/nav.html.twig");
     }
 }

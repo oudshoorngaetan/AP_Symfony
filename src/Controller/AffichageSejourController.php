@@ -54,4 +54,34 @@ class AffichageSejourController extends AbstractController
         ]);
     }
 
+    #[Route('/sejour/sejoursEffectif/{date}', name: 'app_sejour_effectif')]
+    public function sejoursEffectif(ManagerRegistry $doctrine, Request $request, $date): Response
+    {
+        // Récupère la classe Sejour
+        $repository=$doctrine->getRepository(Sejour::class);
+        // Récupère tous les séjours
+        $desSejours=$repository->findAll();
+        $lesSejours=Array();
+        $dateDuJour=new \DateTime($date);
+        foreach($desSejours as $unSejour){
+            if($unSejour->getDateArr()->format('d-m-Y') <= $dateDuJour->format('d-m-Y') 
+            && $unSejour->getDateSort()->format('d-m-Y') >= $dateDuJour->format('d-m-Y') ){
+                array_push($lesSejours, $unSejour);
+            }
+        }
+        return $this->render('affichage_sejour/index.html.twig', [
+            'controller_name' => 'Séjours effectifs du '.$dateDuJour->format('d-m-Y'),
+            'sejours'         => $lesSejours,
+            'request'         => $request,
+        ]);
+    }
+
+    #[Route('/sejour/menuSejour', name: 'app_menuSejour')]
+    public function menuSejour(): Response
+    {
+        return $this->render('affichage_sejour/affichage.html.twig', array(
+            'controller_name' => 'Menu sejour',
+    ));
+    }
+
 }
