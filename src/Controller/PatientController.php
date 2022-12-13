@@ -76,6 +76,11 @@ class PatientController extends AbstractController
     {
         $em = $doctrine->getManager();
         $sejour=new Sejour();
+        $repository=$doctrine->getRepository(Patient::class);
+        
+        $patient = $repository->find($id);
+        $sejour->setPatient($patient);
+
         $form = $this->createForm(SejourType::class, $sejour);
         $form->handleRequest($request);
           if ($form->isSubmitted() && $form->isValid()) {
