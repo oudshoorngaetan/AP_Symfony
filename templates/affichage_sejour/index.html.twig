@@ -8,6 +8,29 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+<button><a href="{{ path('app_affichage_sejour') }}"> Tous les séjours </a></button>
+<button><a href="{{ path('app_sejour_du_jour') }}"> Arriver patients du jour </a></button>
+<button><a href="{{ path('ajoutEtatSortie') }}"> Sortie des patients</a></button>
+<p>Afficher les séjours effectifs à cette date :</p>
+<input type="date" id="datepicker">
+<button onclick="redirection()">Afficher</button>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+document.getElementById("datepicker").valueAsDate = new Date();
+
+
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+
+function redirection(){
+    var date = new Date(document.getElementById("datepicker").value);
+    date = padTo2Digits(date.getDate()) + '-' + padTo2Digits(date.getMonth()+1) + '-' + date.getFullYear();
+    window.location.href = "/sejour/sejoursEffectif/"+date;
+}
+</script>
+
 <div class="example-wrapper">
     <h1>{{ controller_name }}</h1>
 </div>
@@ -38,4 +61,5 @@
 {% endfor %}
     </tbody>
 </table>
+
 {% endblock %}
