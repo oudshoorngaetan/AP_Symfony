@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Sejour;
+use App\Form\CommentaireType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\SejourType;
 
@@ -67,10 +68,25 @@ class SejourController extends AbstractController
     public function sejourId(ManagerRegistry $doctrine, $id, Request $request): Response
     {
         $repository = $doctrine->getRepository(Sejour::class);
-        $leSejour = $repository->find($id);
+        $sejour = $repository->find($id);
+        $em=$doctrine->getManager();
 
+        $form = $this->createForm(CommentaireType::class, $sejour);
+        $form->handleRequest($request);
+          if ($form->isSubmitted() && $form->isValid()) {
+              $sejour->setEtat(2);
+              $sejour = $form->getData();
+              $em->persist($sejour);
+              $em->flush();
+              // redirection vers la liste des adhérents
+              return $this->redirectToRoute('sejourActu');
+              //NOM DE LOGIQUE APP_ADHERENTS
+            }
+            
         return $this->render('affichage_sejour/unSejour.html.twig', array(
-            'sejour' => $leSejour,
+            'form' => $form->createView(),
+
+            'sejour' => $sejour,
             'title' => 'Le sejour'
     ));
     }
@@ -110,7 +126,7 @@ class SejourController extends AbstractController
     ));
     }
 
-    #[Route('/sejour/sejourActuel', name: 'ajoutEtatSortie')]
+    #[Route('/sejour/sejourActuel', name: 'sejourActu')]
     public function SejourActuel(ManagerRegistry $doctrine, Request $request): Response
     {
         $repository = $doctrine->getRepository(Sejour::class);
@@ -128,5 +144,5 @@ class SejourController extends AbstractController
     ));
     }
 
-
+   
 }

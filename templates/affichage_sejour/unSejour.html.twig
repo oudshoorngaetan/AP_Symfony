@@ -19,21 +19,22 @@
         {{ sejour.lit.chambre.numero }} </p>
 <p> Numéro de lit :  
         {{ sejour.lit.id }} </p>
-        <p> Le commentaire : 
-        {{ sejour.commentaire }} </p>
-
-        <p> La date d'arrivée : 
+         <p> La date d'arrivée : 
         {{ sejour.dateArr | date('d-m-Y')}}
                 </p>
 
         <p> La date de sortie : 
         {{ sejour.dateSort | date('d-m-Y')}}
                </p>
+        <p>  
+         {{ form_start(form) }}
+    {{ form_widget(form) }}
+     {{ form_end(form) }}
+ </p>  
+
+       
 
 {% if sejour.etat == 0 %}
            <td><a href="{{ path('etatsejour', {id:sejour.id}) }}"><button type="button">Valider départ</button></a></td>
-{% elseif sejour.etat == 1 %}
-    <td><a href="{{ path('ajoutEtatSortie', {id:sejour.id}) }}"><button type="button">Valider sortie</button></a></td>
-{% else %}
 {% endif %}
 {% endblock %}
