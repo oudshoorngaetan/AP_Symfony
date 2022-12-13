@@ -134,24 +134,28 @@ class __TwigTemplate_79662eadb788af535d83bec6472fb33d extends Template
             // line 23
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("patient", ["id" => twig_get_attribute($this->env, $this->source, $context["patient"], "id", [], "any", false, false, false, 23)]), "html", null, true);
             echo "\"><button type=\"button\">Modifier</button></a></td>
+            <td><a href=\"";
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("creer_sejour", ["id" => twig_get_attribute($this->env, $this->source, $context["patient"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+            echo "\"><button type=\"button\">Ajouter un séjour</button></a></td>
         </tr>
     ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 26
+            // line 27
             echo "        <p> Pas de patients </p>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['patient'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
+        // line 29
         echo "
     </table>
 
     <a href=\"";
-        // line 31
+        // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ajout_patient");
         echo "\"><button type=\"button\">Ajouter un patient</button></a>
 </div>
@@ -177,7 +181,7 @@ class __TwigTemplate_79662eadb788af535d83bec6472fb33d extends Template
 
     public function getDebugInfo()
     {
-        return array (  155 => 31,  150 => 28,  143 => 26,  135 => 23,  127 => 22,  123 => 21,  119 => 20,  115 => 19,  111 => 18,  108 => 17,  103 => 16,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  159 => 32,  154 => 29,  147 => 27,  139 => 24,  135 => 23,  127 => 22,  123 => 21,  119 => 20,  115 => 19,  111 => 18,  108 => 17,  103 => 16,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -205,6 +209,7 @@ class __TwigTemplate_79662eadb788af535d83bec6472fb33d extends Template
             <td>{{ patient.telephone }}</td>
             <td>{{ patient.adresse }} {{ patient.cp }} {{ patient.ville }}</td>
             <td><a href=\"{{ path('patient', {id:patient.id}) }}\"><button type=\"button\">Modifier</button></a></td>
+            <td><a href=\"{{ path('creer_sejour', {id:patient.id}) }}\"><button type=\"button\">Ajouter un séjour</button></a></td>
         </tr>
     {% else %}
         <p> Pas de patients </p>
@@ -216,6 +221,6 @@ class __TwigTemplate_79662eadb788af535d83bec6472fb33d extends Template
 </div>
 
 {% endblock %}
-", "patient/index.html.twig", "/home/sio2022/Documents/Symfony/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/patient/index.html.twig");
+", "patient/index.html.twig", "/home/sio2022/AP_Symfony_Sejour_lang-miroux-oudshoorn/templates/patient/index.html.twig");
     }
 }

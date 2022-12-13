@@ -75,6 +75,9 @@ class SejourController extends AbstractController
     ));
     }
   
+
+
+
     #[Route('/ajoutEtat/{id}', name: 'etatsejour')]
     public function etatSejour(ManagerRegistry $doctrine, $id, Request $request): Response
     {
@@ -106,5 +109,36 @@ class SejourController extends AbstractController
             'title' => 'Le sejour'
     ));
     }
+
+    #[Route('/sejour/sejourActuel', name: 'ajoutEtatSortie')]
+    public function SejourActuel(ManagerRegistry $doctrine, Request $request): Response
+    {
+        $repository = $doctrine->getRepository(Sejour::class);
+        $desSejours = $repository->findAll();
+        $lesSejours=Array();
+        foreach($desSejours as $unSejour){
+            if($unSejour->getEtat()==1){
+                array_push($lesSejours, $unSejour);
+            }
+        }
+       
+        return $this->render('affichage_sejour/index.html.twig', array(
+            'sejours'         => $lesSejours,
+            'controller_name' => 'Le sejour'
+    ));
+    }
+
+
+    #[Route('/sejour/menuSejour', name: 'app_menuSejour')]
+    public function menuSejour(): Response
+    {
+        
+       
+        return $this->render('affichage_sejour/unSejour.html.twig', array(
+            
+            'controller_name' => 'Menu sejour',
+    ));
+    }
+
 
 }

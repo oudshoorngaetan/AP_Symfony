@@ -381,9 +381,6 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\SejourController"/>
       </call>
     </service>
-    <service id="App\Form\DateType" class="App\Form\DateType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
     <service id="App\Form\PatientType" class="App\Form\PatientType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -1209,7 +1206,6 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
-        <argument>App\Form\DateType</argument>
         <argument>App\Form\PatientType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\SejourType</argument>
@@ -3223,7 +3219,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.wQl38cT"/>
+      <argument type="service" id=".service_locator.nZ6sIih"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -6164,8 +6160,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SejourController" class="App\Controller\SejourController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SejourController" class="App\Controller\SejourController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SejourController" class="App\Controller\SejourController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DateType" class="App\Form\DateType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\DateType" class="App\Form\DateType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PatientType" class="App\Form\PatientType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PatientType" class="App\Form\PatientType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
@@ -6540,7 +6534,7 @@
         <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
       </argument>
     </service>
-    <service id=".service_locator.NX3QwMy" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.yhS9Smk" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AffichageSejourController::index" type="service_closure" id=".service_locator.GQZbvNR"/>
@@ -6552,6 +6546,7 @@
         <argument key="App\Controller\PatientController::getPatients" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\PatientController::getUnPatient" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.YU8H6ve"/>
+        <argument key="App\Controller\SejourController::SejourActuel" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\SejourController::createClub" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\SejourController::etatSejour" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\SejourController::etatSejourSortie" type="service_closure" id=".service_locator.GQZbvNR"/>
@@ -6570,6 +6565,7 @@
         <argument key="App\Controller\PatientController:getPatients" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\PatientController:getUnPatient" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.YU8H6ve"/>
+        <argument key="App\Controller\SejourController:SejourActuel" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\SejourController:createClub" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\SejourController:etatSejour" type="service_closure" id=".service_locator.GQZbvNR"/>
         <argument key="App\Controller\SejourController:etatSejourSortie" type="service_closure" id=".service_locator.GQZbvNR"/>
@@ -6743,10 +6739,9 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.wQl38cT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.nZ6sIih" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Form\DateType" type="service_closure" id="App\Form\DateType"/>
         <argument key="App\Form\PatientType" type="service_closure" id="App\Form\PatientType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\SejourType" type="service_closure" id="App\Form\SejourType"/>
@@ -7402,12 +7397,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.NX3QwMy"/>
+      <argument type="service" id=".service_locator.yhS9Smk"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.NX3QwMy"/>
+      <argument type="service" id=".service_locator.yhS9Smk"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8349,7 +8344,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.NX3QwMy"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.yhS9Smk"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8371,9 +8366,9 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.riGN6sa" alias=".service_locator.YU8H6ve"/>
-    <service id=".service_locator.WjQQOU5" alias=".service_locator.NX3QwMy"/>
+    <service id=".service_locator.iJuUHZe" alias=".service_locator.yhS9Smk"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.9hbJ9x6" alias=".service_locator.wQl38cT"/>
+    <service id=".service_locator.ow.C7G9" alias=".service_locator.nZ6sIih"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator._eRAkJb" alias=".service_locator.jIxfAsi"/>

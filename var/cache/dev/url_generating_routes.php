@@ -31,5 +31,6 @@ return [
     'app_modifSejourId' => [['id'], ['_controller' => 'App\\Controller\\SejourController::modifd'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/modifSejour']], [], [], []],
     'unsejour' => [['id'], ['_controller' => 'App\\Controller\\SejourController::sejourId'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/unsejour']], [], [], []],
     'etatsejour' => [['id'], ['_controller' => 'App\\Controller\\SejourController::etatSejour'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ajoutEtat']], [], [], []],
-    'ajoutEtatSortie' => [['id'], ['_controller' => 'App\\Controller\\SejourController::etatSejourSortie'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ajoutEtatSortie']], [], [], []],
+    'ajoutEtatSortie' => [[], ['_controller' => 'App\\Controller\\SejourController::SejourActuel'], [], [['text', '/sejour/sejourActuel']], [], [], []],
+    'app_menuSejour' => [[], ['_controller' => 'App\\Controller\\SejourController::menuSejour'], [], [['text', '/sejour/menuSejour']], [], [], []],
 ];
