@@ -19,10 +19,17 @@ class SejourType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('dateArr', DateType::class, array('label'=>'Nom de l\'adhérent : '))
-            ->add('dateSort', DateType::class, array('label'=>'Nom de l\'adhérent : '))
-            ->add('commentaire', TextType::class, array('label'=>'Nom de l\'adhérent : '))
-            ->add('patient',  EntityType::class, array('class'=>Patient::class,'choice_label'=>'id'))
+            ->add('dateArr', DateType::class, array('label'=>'Date d\'arrivé : ',
+                                                    'format' => 'dd MM yyyy',
+                                                //sélection des années, de l'année actuelle à l'année +20
+                                                    'years' => range(date('Y'), date('Y')+2)))
+            ->add('dateSort', DateType::class, array('label'=>'Date de sortie : ',
+                                                    'format' => 'dd MM yyyy',
+                                                //sélection des années, de l'année actuelle à l'année +20
+                                                    'years' => range(date('Y'), date('Y')+2)))
+            ->add('commentaire', TextType::class, array('label'=>'Commentaire : '))
+            ->add('patient',  EntityType::class, array('class'=>Patient::class,'choice_label' => function (Patient $patient) {
+                return $patient->getNom() . ' ' . $patient->getPrenom(); }))
             ->add('lit', EntityType::class, array('class'=>Lit::class,'choice_label'=>'id'))
             ->add('save', SubmitType::class, array('label' => 'Enregistrer le sejour'))
             
