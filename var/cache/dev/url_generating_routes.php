@@ -21,6 +21,7 @@ return [
     'app_sejour_date' => [['date'], ['_controller' => 'App\\Controller\\AffichageSejourController::sejoursDate'], [], [['variable', '/', '[^/]++', 'date', true], ['text', '/sejour/sejours']], [], [], []],
     'app_sejour_effectif' => [['date'], ['_controller' => 'App\\Controller\\AffichageSejourController::sejoursEffectif'], [], [['variable', '/', '[^/]++', 'date', true], ['text', '/sejour/sejoursEffectif']], [], [], []],
     'app_menuSejour' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::menuSejour'], [], [['text', '/sejour/menuSejour']], [], [], []],
+    'app_sejour_a_venir' => [[], ['_controller' => 'App\\Controller\\AffichageSejourController::sejourAVenir'], [], [['text', '/sejour/sejourAVenir']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\LoginController::index'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
     'patients' => [[], ['_controller' => 'App\\Controller\\PatientController::getPatients'], [], [['text', '/patients']], [], [], []],

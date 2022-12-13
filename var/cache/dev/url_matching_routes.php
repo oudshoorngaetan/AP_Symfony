@@ -17,6 +17,7 @@ return [
         '/sejour/sejours' => [[['_route' => 'app_affichage_sejour', '_controller' => 'App\\Controller\\AffichageSejourController::index'], null, null, null, false, false, null]],
         '/sejour/sejoursDuJour' => [[['_route' => 'app_sejour_du_jour', '_controller' => 'App\\Controller\\AffichageSejourController::sejoursDuJour'], null, null, null, false, false, null]],
         '/sejour/menuSejour' => [[['_route' => 'app_menuSejour', '_controller' => 'App\\Controller\\AffichageSejourController::menuSejour'], null, null, null, false, false, null]],
+        '/sejour/sejourAVenir' => [[['_route' => 'app_sejour_a_venir', '_controller' => 'App\\Controller\\AffichageSejourController::sejourAVenir'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\LoginController::index'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\LoginController::logout'], null, ['GET' => 0], null, false, false, null]],
         '/patients' => [[['_route' => 'patients', '_controller' => 'App\\Controller\\PatientController::getPatients'], null, null, null, false, false, null]],

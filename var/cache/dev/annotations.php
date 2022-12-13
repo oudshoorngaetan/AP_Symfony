@@ -62,6 +62,10 @@ return [[
 '[C]App%5CController%5CAffichageSejourController%23sejoursDuJour' => 1,
 'App%5CController%5CAffichageSejourController%23sejoursDate' => 0,
 '[C]App%5CController%5CAffichageSejourController%23sejoursDate' => 1,
+'App%5CController%5CAffichageSejourController%23sejoursEffectif' => 0,
+'[C]App%5CController%5CAffichageSejourController%23sejoursEffectif' => 1,
+'App%5CController%5CAffichageSejourController%23menuSejour' => 0,
+'[C]App%5CController%5CAffichageSejourController%23menuSejour' => 1,
 'App%5CController%5CLoginController' => 0,
 '[C]App%5CController%5CLoginController' => 1,
 'App%5CController%5CLoginController%23index' => 0,
@@ -98,6 +102,8 @@ return [[
 '[C]App%5CController%5CSejourController%23etatSejour' => 1,
 'App%5CController%5CSejourController%23etatSejourSortie' => 0,
 '[C]App%5CController%5CSejourController%23etatSejourSortie' => 1,
+'App%5CController%5CSejourController%23SejourActuel' => 0,
+'[C]App%5CController%5CSejourController%23SejourActuel' => 1,
 'App%5CEntity%5CChambre' => 0,
 '[C]App%5CEntity%5CChambre' => 1,
 'App%5CEntity%5CChambre%23__construct' => 0,
@@ -872,6 +878,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1670933905,
+1 => 1670938133,
 
 ]];

@@ -3,11 +3,6 @@
 {% block title %}Hello AffichageSejourController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
 <button><a href="{{ path('app_affichage_sejour') }}"> Tous les séjours </a></button>
 <button><a href="{{ path('app_sejour_du_jour') }}"> Arriver patients du jour </a></button>
 <button><a href="{{ path('ajoutEtatSortie') }}"> Sortie des patients</a></button>
@@ -18,9 +13,6 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script>
-document.getElementById("datepicker").valueAsDate = new Date();
-
-
 function padTo2Digits(num) {
   return num.toString().padStart(2, '0');
 }
@@ -31,10 +23,7 @@ function redirection(){
     window.location.href = "/sejour/sejoursEffectif/"+date;
 }
 </script>
-
-<div class="example-wrapper">
-    <h1>{{ controller_name }}</h1>
-</div>
+<h1>{{ controller_name }}</h1>
 <table>
     <thead>
         <th>Patient</th>
@@ -46,7 +35,7 @@ function redirection(){
         <th>Date de sortie</th>
     </thead>
     <tbody>
-{% for sejour in sejours|sort((a, b) => a.patient.nom <=> b.patient.nom) %}
+{% for sejour in sejours|sort((a, b) => a.dateArr <=> b.dateArr) %}
     <tr>
         <td>{{ sejour.patient.nom }} {{ sejour.patient.prenom }}</td>
         <td>{{ sejour.lit.chambre.service.libelle }}</td>
@@ -57,10 +46,9 @@ function redirection(){
         <td>{{ sejour.dateSort | date('d-m-Y')}}</td>
         <td><a href="{{ path('unsejour', {id:sejour.id}) }}"><button type="button">Afficher</button></a></td>
     </tr>
-{% else %}
-    Pas de patients
+    {% else %}
+    Pas de séjours
 {% endfor %}
     </tbody>
 </table>
-
 {% endblock %}

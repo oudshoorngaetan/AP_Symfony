@@ -42,7 +42,7 @@ class AffichageSejourController extends AbstractController
         $lesSejours=Array();
         $dateDuJour=new \DateTime($date);
         foreach($desSejours as $unSejour){
-            if($unSejour->getDateArr()->format('d-m-Y') == $dateDuJour->format('d-m-Y')){
+            if($unSejour->getDateArr()->format('Y-m-d') == $dateDuJour->format('Y-m-d')){
                 array_push($lesSejours, $unSejour);
             }
         }
@@ -64,8 +64,8 @@ class AffichageSejourController extends AbstractController
         $lesSejours=Array();
         $dateDuJour=new \DateTime($date);
         foreach($desSejours as $unSejour){
-            if($unSejour->getDateArr()->format('d-m-Y') <= $dateDuJour->format('d-m-Y') 
-            && $unSejour->getDateSort()->format('d-m-Y') >= $dateDuJour->format('d-m-Y') ){
+            if($unSejour->getDateArr()->format('Y-m-d') <= $dateDuJour->format('Y-m-d') 
+            && $unSejour->getDateSort()->format('Y-m-d') >= $dateDuJour->format('Y-m-d') ){
                 array_push($lesSejours, $unSejour);
             }
         }
@@ -82,6 +82,28 @@ class AffichageSejourController extends AbstractController
         return $this->render('affichage_sejour/affichage.html.twig', array(
             'controller_name' => 'Menu sejour',
     ));
+    }
+
+    #[Route('/sejour/sejourAVenir', name: 'app_sejour_a_venir')]
+    public function sejourAVenir(ManagerRegistry $doctrine, Request $request): Response
+    {
+        // Récupère la classe Sejour
+        $repository=$doctrine->getRepository(Sejour::class);
+        // Récupère tous les séjours
+        $desSejours=$repository->findAll();
+        $lesSejours=Array();
+        $date=new \DateTime();
+        foreach($desSejours as $unSejour){
+            if($unSejour->getDateArr()->format('Y-m-d') >= $date->format('Y-m-d')){
+                array_push($lesSejours, $unSejour);
+            }
+        }
+        return $this->render('affichage_sejour/sejourAVenir.html.twig', [
+            'controller_name' => 'Séjours à venir',
+            'sejours'         => $lesSejours,
+            //'formulaire'      => $form,
+            //'request'         => $request,
+        ]);
     }
 
 }
