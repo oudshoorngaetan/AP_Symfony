@@ -5,6 +5,10 @@
 a {
     text-decoration: none;
 }
+
+/*
+    menu principal
+*/
 .menu {
     box-shadow: 0px 5px 5px grey;
     height: 80px;
@@ -28,9 +32,195 @@ a {
 }
 
 .nav_links li a:hover{
-    color: rgb(160, 23, 53);
+    color: #B3DEC1;
 }
 
-.form {
-    margin : 30px;
+/*
+    sous-menu
+*/
+.submenu {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 3px;
 }
+
+.submenu button {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 5px;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 5px 5px grey;
+}
+
+.submenu button:hover {
+  background-color: #E5FCF5;
+  color: black;
+}
+
+.submenu a {
+    color: black;
+}
+
+/*
+    titre h1
+*/
+.title {
+    text-align: center;
+}
+
+/*
+    texte p
+*/
+p.message {
+    text-align: center
+}
+
+/*
+    formulaire
+*/
+.form {
+    margin-left:25px;
+}
+
+/*
+    table
+*/
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    padding-bottom: 5px;
+}
+
+td {
+    width : 95px;
+    padding: 5px;
+}
+
+tr {
+    border-bottom: 1pt solid black;
+  }
+
+/*
+    input date
+*/
+.date {
+    margin-left: 25px;
+}
+
+.date input[type=date] {
+    margin-left: 30px;
+    height: 30px;
+    width: 125px;
+}
+
+.valid-sejour, .log button {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.valid-sejour:hover , .log button:hover {
+  background-color: #f7fafa;
+}
+
+.valid-sejour:focus, .log button:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
+.ajout-sejour, .ajout-sejour-patient {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+
+  .ajout-sejour {
+    width: 150px;
+  }
+
+  .ajout-sejour-patient {
+    width: 180px;
+  }
+
+  .ajouter-patient {
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+  
+  .ajout-sejour:hover {
+    background-color: #f7fafa;
+  }
+  
+  .ajout-sejour:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+  }
+
+  /*
+  fieldset des fiches séjour
+  */
+  fieldset {
+    width: 600px;
+    margin: auto;
+  }
+
+  fieldset p, fieldset form {
+    font-size: 20px;
+  }
+
+  fieldset button {
+    margin: 10px;
+  }
+
+  /*
+    log
+  */
+  .log {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+  }

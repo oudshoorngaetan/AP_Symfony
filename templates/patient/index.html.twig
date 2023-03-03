@@ -1,11 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PatientController!{% endblock %}
+{% block title %}Gestion des séjours | Patients{% endblock %}
 
 {% block body %}
-
-<div class="affichagePatient">
-    <h1>{{ title }}</h1>
+<div class="ajouter-patient">
+    <a href="{{ path('ajout_patient') }}">
+        <button class="ajout-sejour-patient" type="button">Ajouter un patient</button>
+    </a>
+</div>
+    <div class="title">
+        <h1>{{ title }}</h1>
+    </div>
 
     <table>
         <th>ID</th>
@@ -20,16 +25,13 @@
             <td>{{ patient.prenom }}</td>
             <td>{{ patient.telephone }}</td>
             <td>{{ patient.adresse }} {{ patient.cp }} {{ patient.ville }}</td>
-            <td><a href="{{ path('patient', {id:patient.id}) }}"><button type="button">Modifier</button></a></td>
-            <td><a href="{{ path('creer_sejour', {id:patient.id}) }}"><button type="button">Ajouter un séjour</button></a></td>
+            <td><a href="{{ path('patient', {id:patient.id}) }}"><button class="valid-sejour" type="button">Modifier</button></a></td>
+            <td><a href="{{ path('creer_sejour', {id:patient.id}) }}"><button class="ajout-sejour-patient" type="button">Ajouter un séjour</button></a></td>
         </tr>
     {% else %}
         <p> Pas de patients </p>
     {% endfor %}
 
     </table>
-
-    <a href="{{ path('ajout_patient') }}"><button type="button">Ajouter un patient</button></a>
-</div>
 
 {% endblock %}

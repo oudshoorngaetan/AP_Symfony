@@ -1,45 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil
-{% endblock %}
+{% block title %}Gestion des séjours | Fiche séjour{% endblock %}
 
 {% block body %}
-
-
-	<h1>Hello
-
-
+<div class="title">
+        <h1>Fiche séjour</h1>
+</div>
 	{#Le numero de l'adherent  :{{adherent.id}}{{adherent.nom}}-{{adherent.prenom}} #}
-
+<fieldset>
 <p> Patient : 
-      {{ sejour.patient.nom }} {{ sejour.patient.prenom }}         </p>
-      <p> Service : 
-{{sejour.lit.chambre.service.libelle}} </p>
+      {{ sejour.patient.nom }} {{ sejour.patient.prenom }} </p>
+<p> Service : 
+        {{sejour.lit.chambre.service.libelle}} </p>
 <p> Numéro de chambre : 
         {{ sejour.lit.chambre.numero }} </p>
 <p> Numéro de lit :  
         {{ sejour.lit.id }} </p>
-         <p> La date d'arrivée : 
-        {{ sejour.dateArr | date('d-m-Y')}}
-                </p>
+<p> La date d'arrivée : 
+        {{ sejour.dateArr | date('d-m-Y')}} </p>
+<p> La date de sortie : 
+        {{ sejour.dateSort | date('d-m-Y')}} </p>
+{# commentaire #}
+<p>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+</p> 
 
-        <p> La date de sortie : 
-        {{ sejour.dateSort | date('d-m-Y')}}
-               </p>
-        <p>  
-         {{ form_start(form) }}
-    {{ form_widget(form) }}
-     {{ form_end(form) }}
- </p>  
+ </fieldset>
  <script>
+ let btn = document.getElementById('commentaire_save');
+ btn.classList.add("ajout-sejour");
 if({{ sejour.etat }} == 0){
-        document.getElementById('commentaire_save').textContent = document.getElementById('commentaire_save').textContent + " entrée";
+        btn.textContent = btn.textContent + " entrée";
 }
 if({{ sejour.etat }} == 1){
-        document.getElementById('commentaire_save').textContent = document.getElementById('commentaire_save').textContent + " sortie";
+        btn.textContent = btn.textContent + " sortie";
 }
 if({{ sejour.etat }} == 2){
-        document.getElementById('commentaire_save').style.display = "none";
+        btn.style.display = "none";
 }
  </script>
 {% endblock %}

@@ -1,12 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PatientController!{% endblock %}
+{% block title %}Gestion des séjours | Ajout d'un séjour{% endblock %}
 
 {% block body %}
 
 <div class="affichagePatient">
+<div class="title">
     <h1>{{ title }}</h1>
-
+</div>
 
     {{ form_start(form) }}
     {{ form_widget(form) }}
