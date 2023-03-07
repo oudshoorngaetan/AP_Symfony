@@ -10,13 +10,14 @@ use App\Entity\Lit;
 use App\Repository\SejourRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: SejourRepository::class)]
 #[ApiResource(
     operations: [
-        new Get(),
-        new GetCollection(),
-        new Put()
+        new Get(normalizationContext: ['groups' => ['get']]),
+        new GetCollection(normalizationContext: ['groups' => ['get']]),
+        new Put(normalizationContext: ['groups' => ['put']])
     ]
 )]
 class Sejour
@@ -27,22 +28,28 @@ class Sejour
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups(['get', 'put'])]
     private ?\DateTimeInterface $dateArr = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups(['get', 'put'])]
     private ?\DateTimeInterface $dateSort = null;
 
     #[ORM\Column(length: 60)]
+    #[Groups(['get', 'put'])]
     private ?string $commentaire = null;
 
     #[ORM\ManyToOne(inversedBy: 'sejours')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['get', 'put'])]
     private ?Patient $patient = null;
 
     #[ORM\ManyToOne(inversedBy: 'sejours')]
+    #[Groups(['get', 'put'])]
     private ?Lit $lit = null;
 
     #[ORM\Column]
+    #[Groups(['get', 'put'])]
     private ?int $etat = null;
 
     public function getId(): ?int
