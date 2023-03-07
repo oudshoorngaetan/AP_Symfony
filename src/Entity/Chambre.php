@@ -9,6 +9,7 @@ use App\Repository\ChambreRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ChambreRepository::class)]
 #[ApiResource(
@@ -25,9 +26,11 @@ class Chambre
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Groups(['get'])]
     private ?int $numero = null;
 
     #[ORM\ManyToOne(inversedBy: 'chambres')]
+    #[Groups(['get'])]
     private ?Service $service = null;
 
     #[ORM\OneToMany(mappedBy: 'chambre', targetEntity: Lit::class)]
