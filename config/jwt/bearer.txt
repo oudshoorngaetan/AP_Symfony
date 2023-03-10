@@ -1,0 +1,10 @@
+{
+  "iat": 1678197044,
+  "exp": 1678200644,
+  "roles": [
+    "ROLE_ADMIN",
+    "ROLE_INFIRMIER",
+    "ROLE_USER"
+  ],
+  "username": "prout@gmail.com"
+}
