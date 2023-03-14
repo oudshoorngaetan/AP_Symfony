@@ -15,8 +15,8 @@ use Symfony\Component\Serializer\Annotation\Groups;
 #[ORM\Entity(repositoryClass: SejourRepository::class)]
 #[ApiResource(
     operations: [
-        new Get(normalizationContext: ['groups' => ['get']]),
-        new GetCollection(normalizationContext: ['groups' => ['get']]),
+        new Get(normalizationContext: ['groups' => ['get'], "datetime_format" => "Y-m-d"]),
+        new GetCollection(normalizationContext: ['groups' => ['get'], "datetime_format" => "Y-m-d"]),
         new Put(normalizationContext: ['groups' => ['put']])
     ]
 )]
