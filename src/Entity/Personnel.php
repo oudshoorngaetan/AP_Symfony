@@ -10,10 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PersonnelRepository::class)]
 #[ApiResource(
-    operations: [
-        new Get(),
-        new GetCollection()
-    ]
+    operations: []
 )]
 class Personnel
 {
