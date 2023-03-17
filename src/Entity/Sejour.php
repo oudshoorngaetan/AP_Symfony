@@ -28,24 +28,24 @@ class Sejour
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Groups(['get', 'put'])]
+    #[Groups(['get'])]
     private ?\DateTimeInterface $dateArr = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Groups(['get', 'put'])]
+    #[Groups(['get'])]
     private ?\DateTimeInterface $dateSort = null;
 
     #[ORM\Column(length: 60)]
-    #[Groups(['get', 'put'])]
+    #[Groups(['get'])]
     private ?string $commentaire = null;
 
     #[ORM\ManyToOne(inversedBy: 'sejours')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['get', 'put'])]
+    #[Groups(['get'])]
     private ?Patient $patient = null;
 
     #[ORM\ManyToOne(inversedBy: 'sejours')]
-    #[Groups(['get', 'put'])]
+    #[Groups(['get'])]
     private ?Lit $lit = null;
 
     #[ORM\Column]
