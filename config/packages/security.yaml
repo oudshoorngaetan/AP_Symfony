@@ -57,7 +57,7 @@ security:
         - { path: ^/createSejour, roles: ROLE_INFIRMIER }
         - { path: ^/modifSejour, roles: ROLE_INFIRMIER }
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
-        - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api,       roles: ROLE_INFIRMIER }
 
 when@test:
     security:
