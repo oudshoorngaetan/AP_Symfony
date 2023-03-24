@@ -13,10 +13,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ChambreRepository::class)]
 #[ApiResource(
-    operations: [
-        new Get(),
-        new GetCollection()
-    ]
+    operations: []
 )]
 class Chambre
 {
