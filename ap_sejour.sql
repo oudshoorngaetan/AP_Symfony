@@ -24,6 +24,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `service`
+--
+
+CREATE TABLE `service` (
+  `id` int(11) NOT NULL,
+  `libelle` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `service`
+--
+
+INSERT INTO `service` (`id`, `libelle`) VALUES
+(1, 'Cardiologie'),
+(2, 'Radiologie'),
+(3, 'Chirurgie'),
+(4, 'Chirurgie esthétique'),
+(5, 'Oncologie'),
+(6, 'Soins intensifs'),
+(7, 'Urologie'),
+(8, 'Anesthésiologie');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `chambre`
 --
 
@@ -194,45 +219,23 @@ CREATE TABLE `sejour` (
   `id` int(11) NOT NULL,
   `date_arr` date NOT NULL,
   `date_sort` date NOT NULL,
-  `commentaire` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `commentaire` varchar(60) NOT NULL,
   `patient_id` int(11) NOT NULL,
-  `lit_id` int(11) DEFAULT NULL
+  `lit_id` int(11) DEFAULT NULL,
+  `etat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `sejour`
 --
 
-INSERT INTO `sejour` (`id`, `date_arr`, `date_sort`, `commentaire`, `patient_id`, `lit_id`) VALUES
-(1, '2022-11-22', '2022-11-25', 'Zozopopo', 1, 10),
-(2, '2022-11-23', '2022-11-24', 'Test2', 2, 12),
-(3, '2022-11-22', '2022-11-27', 'Test3', 3, 18),
-(4, '2022-11-22', '2022-11-30', 'Test4', 4, 4);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `service`
---
-
-CREATE TABLE `service` (
-  `id` int(11) NOT NULL,
-  `libelle` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `service`
---
-
-INSERT INTO `service` (`id`, `libelle`) VALUES
-(1, 'Cardiologie'),
-(2, 'Radiologie'),
-(3, 'Chirurgie'),
-(4, 'Chirurgie esthétique'),
-(5, 'Oncologie'),
-(6, 'Soins intensifs'),
-(7, 'Urologie'),
-(8, 'Anesthésiologie');
+INSERT INTO `sejour` (`id`, `date_arr`, `date_sort`, `commentaire`, `patient_id`, `lit_id`, `etat`) VALUES
+(1, '2023-03-23', '2023-03-23', 'TestEntree', 1, 10, 0),
+(2, '2023-03-22', '2023-03-22', 'Test2', 2, 12, 1),
+(3, '2023-03-22', '2023-03-22', 'Test3', 3, 18, 1),
+(4, '2023-03-22', '2023-03-22', 'Test4', 4, 4, 0),
+(5, '2023-03-22', '2023-03-22', 'Test', 3, 18, 1),
+(26, '2023-03-22', '2023-03-22', 'Test', 3, 18, 0);
 
 -- --------------------------------------------------------
 
@@ -253,9 +256,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `personnel_id`) VALUES
-(1, 'olivia.la28@gmail.com', '[\"ROLE_ADMIN\"]', '$2y$13$TUCmVaU6XD5qsFrYPeqt6uGZSzILTU2aAlj6eyZYPSB.QqsHLDitq', NULL),
-(2, 'gaetan.oudshoorn@gmail.com', '[\"ROLE_ADMIN\",\"ROLE_INFIRMIER\"]', '$2y$13$5d7mDjNs337.goyWAx3bXeReMVWpi1Zm6naHU.Lpcw7vU8E9uc9gK', NULL);
-
+(4, 'gaetan@gmail.com', '[\"ROLE_INFIRMIER\"]', '$2y$13$AZFApqHWtxD7OvCrFU2cVOYeVtwpz1RwXHZvpCqHnr9ZSjCl9kfw6', NULL),
+(5, 'olivia@gmail.com', '[\"ROLE_ADMIN\"]', '$2y$13$EgYpFKrfbZfSFmDG3LfIeOMU2sBcAWUMP1PwCjqVB/yDfF7U728t6', NULL);
 --
 -- Index pour les tables déchargées
 --
