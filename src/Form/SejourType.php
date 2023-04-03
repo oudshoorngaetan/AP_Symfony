@@ -19,7 +19,7 @@ class SejourType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('dateArr', DateType::class, array('label'=>'Date d\'arrivé : ',
+            ->add('dateArr', DateType::class, array('label'=>'Date d\'arrivée : ',
                                                     'format' => 'dd MM yyyy',
                                                 //sélection des années, de l'année actuelle à l'année +20
                                                     'years' => range(date('Y'), date('Y')+2)))
